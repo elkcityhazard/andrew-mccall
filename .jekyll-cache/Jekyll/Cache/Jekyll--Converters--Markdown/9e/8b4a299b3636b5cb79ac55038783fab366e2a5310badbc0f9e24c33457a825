@@ -1,0 +1,10 @@
+I"7<h2 id="javascript-background-changer">Javascript Background Changer</h2>
+<p>I saw a similar project that was more basic.  It was using an array to store a set of hex values and then looping through them to generate the color.  I expanded the project by generating a random hex value and then calling an api to retrieve information about the hex value.</p>
+
+<h2 id="javascript-background-changer-setup">Javascript Background Changer Setup</h2>
+
+<p>The project uses loop, random number generation, XHR, and DOM manipulation to achieve the results. To help mask the loading I originally had a loading spinner which executed onprogress of the api call but decided to remove it and replace it with an animation fade in since the max call time was usually less than 150ms.</p>
+
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>To further the project, I might add functionality to cycle through previous colors.  The project can be viewed at <a class="visible inline-link" href="https://elkcityhazard.github.io/background-changer/" title="background changer">Background Changer</a>.</p>
+:ET

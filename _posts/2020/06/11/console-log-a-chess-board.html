@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-12576217-8"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-12576217-8");
+</script>
+ 
+  <!--  Meta Here -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Geo tags -->
+  <meta name="ICBM" content="44.759090, -85.605469" />
+  <meta name="geo.position" content="44.759090;-85.605469" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Traverse City" />
+  <meta name="author" content="Andrew M McCall" />
+
+  <!--  SEO and FEED META will generate title tag and description-->
+  <link type="application/atom+xml" rel="alternate" href="https://andrew-mccall.com/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Console.Log A Chessboard</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="Console.Log A Chessboard" />
+<meta name="author" content="andrew" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A basic example of how to use nested for loops to output a text chessboard to the console. A great introduction to nested for loops in javascript." />
+<meta property="og:description" content="A basic example of how to use nested for loops to output a text chessboard to the console. A great introduction to nested for loops in javascript." />
+<link rel="canonical" href="https://andrew-mccall.com/2020/06/11/console-log-a-chess-board.html" />
+<meta property="og:url" content="https://andrew-mccall.com/2020/06/11/console-log-a-chess-board.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-11T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Console.Log A Chessboard","dateModified":"2020-06-11T00:00:00-04:00","datePublished":"2020-06-11T00:00:00-04:00","description":"A basic example of how to use nested for loops to output a text chessboard to the console. A great introduction to nested for loops in javascript.","url":"https://andrew-mccall.com/2020/06/11/console-log-a-chess-board.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://andrew-mccall.com/2020/06/11/console-log-a-chess-board.html"},"author":{"@type":"Person","name":"andrew"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--  Link To StyleSheets Here  -->
+
+  <link rel="stylesheet" href="/assets/css/normalize.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/png" href="/assets/images/owl-icon.png" />
+
+  <!-- Prefetching Here  -->
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="prefetch"
+  />
+
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+
+  <link rel="preconnect" href="https://kit-free.fontawesome.com" />
+  <!--  Scripts -->
+  <script
+    src="https://kit.fontawesome.com/b7109d4350.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+
+  <body>
+    <header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="navigation toggle">
+    <a href="/" class="brand-logo visible" title="Andrew M McCall">
+    <h1>Console.Log A Chessboard</h1></a>    <nav>
+    <div class="nav-container">
+                <ul>
+            
+            <li><a class="active" href="/" >
+              Home
+            </a></li>
+          
+            <li><a class="active" href="/about.html" >
+              About
+            </a></li>
+          
+            <li><a class="active" href="/blog.html" >
+              Blog
+            </a></li>
+          
+            <li><a class="active" href="/contact.html" >
+              Contact
+            </a></li>
+          
+            <li><a class="active" href="/staff.html" >
+              Contributors
+            </a></li>
+          
+        </ul>
+    </div>
+</nav>
+<label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+</header>
+    <div class="container">
+      <main class="main-content">
+        <h2>Console.Log A Chessboard</h2>
+
+<p class="post-snippet">
+  11 Jun 2020   -
+  <a href="/authors/andrew.html" class="author-link">Andrew McCall</a>
+  
+</p>
+
+<p><img data-src="/assets/images/posts/chessboard.jpg" alt="Chessboard" title="how to make a text-based chessboard" class="img-responsive" /></p>
+
+<pre>
+        Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a "#" character. The characters should form a chessboard.
+
+Passing this string to console.log should show something like this:
+
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # #
+
+When you have a program that generates this pattern, define a binding size = 8 and change the program so that it works for any size, outputting a grid of the given width and height.
+</pre>
+
+<p>Things To Learn Here</p>
+
+<ul>
+<li>Variables</li>
+<li>For Loop</li>
+<li>% Modulus (division remainder)</li>
+</ul>
+
+<p>The first thing we want to do is define a couple of variables:</p>
+
+<pre>
+let size = 8;
+let board = ' ';
+</pre>
+
+<p>This defines the height and the width that the board will be. we set board to an empty string to act as the first space of the board.</p>
+
+<p>To accomplish this we need to go ahead and use a nested for loop.</p>
+
+<pre>
+for (let i = 0; i &lt; size; i++) {
+    for (let j = 0; j &lt; size; j++) {
+        if((i+j) % 2 === 0 ) {
+            board += ' ';
+        } else {
+            board += '#';
+        }
+    }
+    board += '\n';
+}
+</pre>
+
+<p>basically we are checking each space with its corresponding space to see if it is even or odd. If it is even we are outputting a blank space. If it is odd we are outputting an octothorpe. We use the modulus operator to determine this.</p>
+
+<p><code>board += '\n';</code> tells us to make a line break at the end of the line.</p>
+
+<p>The basics of a for loop are setting a starting index, which is usually 0, setting a limit which is usually a number or array length, and then incrementing the loop index until all indexes have been exhausted.</p>
+
+<p>for example:</p>
+
+<pre>
+let list = new Array(1,2,3,4,5);
+
+for (let i = 0; i &lt; list.length; i++) {
+    console.log(i);
+}
+</pre>
+
+<p>This will output the following to the console:</p>
+
+<pre>
+0 
+1 
+2 
+3 
+4
+</pre>
+
+<p>I think that pretty much wraps up my loose understanding of nested lists.</p>
+
+<p>If you have any questions or find any errors feel free to reach out to me <a href="/contact" title="contact me" aria-label="navigation">here.</a></p>
+
+
+<div class="post-nav">
+  <div>
+    
+    <a href="/2020/06/10/intersection-observer.html" class="visible"
+      ><span class="material-icons align-icon">
+        chevron_left
+      </span>
+      Intersection Observer API</a
+    >
+    
+  </div>
+  <div class="post-nav-next">
+    
+    <a href="/2020/06/14/quickly-connect-to-mongodb.html" class="visible"
+      >Quickly Connect To MongoDB In NodeJS
+      <span class="material-icons">
+        chevron_right
+      </span></a
+    >
+    
+  </div>
+</div>
+
+<span
+  > Tags: for loop, javascript, learn to code, web development 
+</span>
+ 
+        </main>
+        <footer class="main-footer">
+  <div class="container">
+    <div class="col">
+      <ul class="weather-data">
+        <li>&#169; 2020</li>
+        <li>
+          <a class="visible inline-link" href="/contact.html"
+            >Andrew M McCall</a
+          >
+        </li>
+        <li><a class="visible inline-link" href="/" title="home">Home</a></li>
+        <li>
+          <a class="visible inline-link" href="/blog.html" title="blog">Blog</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col weather"></div>
+  </div>
+</footer>
+<script src="/assets/js/observer.js"></script>
+
+<script src="/assets/js/weather.js"></script>
+
+      </body>
+      </html>
+    

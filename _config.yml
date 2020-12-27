@@ -1,0 +1,13 @@
+url: https://andrew-mccall.com
+
+collections:
+  authors: 
+    output: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+
+environment: production

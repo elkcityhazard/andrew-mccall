@@ -1,0 +1,58 @@
+I"á	<h2 id="return-useful-information-to-your-users-regarding-crud-operations">Return useful information to your users regarding crud operations</h2>
+
+<pre>exports.updateSingleTask = async (req, res, next) =&gt; {
+const updates = Object.keys(req.body);
+const allowedUpdates = ['description', 'completed'];
+const isValidOperation = updates.every((update) =&gt; {
+return allowedUpdates.includes(update);
+})
+
+    if (!isValidOperation) {
+        return res.status(400).send({error: "The property you tried to update does not exist"})
+    }
+    try {
+
+const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+new: true,
+runValidators: true
+})
+if (!task) {
+return res.status(404).send();
+}
+res.send(task)
+} catch(err) {
+res.status(400).send(err);
+}
+}</pre>
+
+<h3 id="how-user-feedback-works">How User Feedback Works</h3>
+
+<p>The problem: A user somehow defines an object property that does not exist in your database.</p>
+
+<p>For example, lets say you have a task to update. There might be a description and also a completed attribute. Lets say the user wants to use a PATCH request to update that bad boy but for whatever reason they end sending something like this:</p>
+
+<p><code class="language-plaintext highlighter-rouge">{ "date" : "mm:dd:yyyy" }</code></p>
+
+<p>Of course, mongoose would just accept this as a valid operation but nothing useful would return to the user that they made a mistake.</p>
+
+<p>The answer: create a check for allowed updates and only continue the operation if it returns true.</p>
+
+<pre>exports.updateSingleTask = async (req, res, next) =&gt; {
+const updates = Object.keys(req.body);
+const allowedUpdates = ['description', 'completed'];
+const isValidOperation = updates.every((update) =&gt; {
+return allowedUpdates.includes(update);
+})
+
+    if (!isValidOperation) {
+        return res.status(400).send({error: "The property you tried to update does not exist"})
+    }</pre>
+
+<ol>
+  <li>parse the req.body object into an array</li>
+  <li>create an allowedUpdates variable to establish which propertiecan be updated</li>
+  <li>check to see if the data sent to the server is a valid operation.using the every method check to see if each value in the updatevariable is in the allowedUpdates list. If all of them are indeeincluded then isValidation will return true and the operation wilcontinue as normal. If isValidOperator returns false then return 400 error with some useful information for the user.</li>
+</ol>
+
+<p>This is a fun little example to help provide more useful feedback the user.</p>
+:ET

@@ -1,0 +1,64 @@
+I"_	<p><img data-src="/assets/images/posts/intersection-observer.jpg" alt="Intersection Being Observed" title="Intersection Being Observed" class="img-responsive" /></p>
+
+<p>I wanted to be able to easily load an animation if an element came into view. Intersection observer seems to be the quickest way for me. If you want to use this for lazy loading you can give your images a data-src property instead of src then assign the data-src to the src when the element comes into view.</p>
+
+<p>My basic template is:</p>
+
+<pre>
+let images = document.querySelectorAll('.image-class');
+
+observer = new IntersectionObserver((entries) =&gt; {
+  entries.forEach(entry =&gt; {
+    if (entry.intersectionRatio &gt; 0) {
+      let attr = image.target.getAttribute('data-src');
+      image.target.src = attr;
+      entry.target.classList.add("animate__animated");
+      entry.target.classList.add("animate__fadeIn");
+      observer.unobserve(entry.target);
+    } else {
+      //entry.target.classList.remove('animate__animated animate__bounce');
+      return;
+    }
+  });
+});
+
+images.forEach(image =&gt; {
+  observer.observe(image);
+});
+</pre>
+
+<p>This is the basic set up. If you have an image that you want to lazy load you can do something like this:</p>
+
+<p><code>
+&lt;img data-src="url" alt="image alt" class="image-class"&gt;
+</code>
+and in the javascript you can add:</p>
+
+<pre>
+let attr = image.target.getAttribute('data-src');
+      image.target.src = attr;
+</pre>
+
+<p>to the function body.</p>
+
+<p>Intersection observer takes two arguments: the element to be observed and the options.</p>
+
+<pre>
+let options = {
+  root: null
+  rootMargin: "0px",
+  threshold: 1.0,
+};
+let observer = new intersectionObserver((images, options) =&gt; {
+    //Do something with images
+});
+</pre>
+
+<p>root: defines what the viewport area is. If null it will default to the viewport. But you can also use document.getELementById to pick a intersection cross section.</p>
+
+<p>rootMargin: is similar to margin in that it adds margin to your intersection observer entry so that it will trigger with margin added to it.</p>
+
+<p>threshold: is how much should be in the observation area before the request triggers. For example 1.0 means the entire element needs to be in the viewport. This can also be an array so that the callback runs every time visibility passes a threshhold. For example:</p>
+
+<pre>[0, 0.25, 0.5, 0.75, 1.0]</pre>
+:ET

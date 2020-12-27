@@ -1,0 +1,28 @@
+@media screen and (min-width: 601px) {
+  .container {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  a.brand-logo > h1 {
+    font-size: 1em;
+  }
+
+  .main-content {
+    margin: 0 auto;
+    max-width: 60ch;
+    padding-top: 100px;
+  }
+
+  a.post-title {
+    color: #9c88ff;
+    text-align: center;
+  }
+
+  .weather-data li {
+    display: inline-block;
+    font-size: 0.75em;
+  }
+}
+
+/*# sourceMappingURL=main-601.css.map */

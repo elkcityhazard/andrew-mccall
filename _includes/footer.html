@@ -1,0 +1,50 @@
+<footer class="main-footer">
+  <div class="container">
+    <div class="col">
+      <ul class="weather-data">
+        <li>&#169; 2020</li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/contact.html"
+            >Andrew M McCall</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/"
+            title="home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/blog.html"
+            title="blog"
+            >Blog</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/projects"
+            title="projects"
+            >Projects</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col weather"></div>
+  </div>
+</footer>
+<script src="/assets/js/observer.js"></script>
+{% if page.title == "Contact Me" %}
+<script src="/assets/js/form-validator.js"></script>
+{% endif %}
+<script src="/assets/js/weather.js" defer></script>
+{% if page.title == "Blog" or page.layout == "post" %}
+<script src="/assets/js/nav.js" defer></script>
+<script src="/assets/js/blogLoader.js" defer></script>
+{% endif%}

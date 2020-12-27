@@ -1,0 +1,20 @@
+---
+title: Personal Projects
+description: A collection of personal projects and things I am working on or have worked on.
+layout: default
+---
+
+<div class="row">
+  <article class="project-header_article">
+    {% for item in site.data.projects %}
+    <section>
+      <header class="project-header"><a href="{{ item.link }}" class="visible"><h3>{{ item.name }}</h3></a></header>
+      <a href="{{ item.link }}" class="visible">
+        <img class="img-responsive" data-src="{{item.img}}" alt="{{ item.name
+        }}"></a>
+      <span class="item-description">{{ item.description }}</span>
+        <span class="project-url"><a href="{{item.project-url}}" alt="{{item.name}}">{{item.name}}</a>
+    </section>
+    {% endfor %}
+  </article>
+</div>

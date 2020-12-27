@@ -1,0 +1,39 @@
+I"Q	<h1 id="simple-parallax-scrolling-with-javascipt">Simple Parallax Scrolling With Javascipt</h1>
+
+<p>Parallax scrolling is ubiquitous in today’s web design approaches. There are, however, those who dissent. It has a simple, pre-attentive trait that aims to capture attention quickly but often misses its purported mark. Human’s have learned to quickly filter out “banner noise” and only recognize information that is relevant to their query.</p>
+
+<h2 id="javscript-parallax-scrolling">Javscript Parallax Scrolling</h2>
+
+<pre>
+const parallax = (id, rate) =&gt; {
+let el = document.querySelector(id);
+const sp = () =&gt; {
+let x = el.getBoundingClientRect().top / rate;
+let y = Math.round(x \* 100) / 100;
+el.style.backgroundPosition = 'center ' + y + 'px';
+}
+sp();
+window.addEventListener('scroll', function(e) { sp(); });
+}
+
+parallax('.one', 10);
+parallax('.two', 5);
+</pre>
+
+<ol>
+  <li>We are going to start out by defining a function that takes two parameters. The first will be the id which is simply either the class or id of the element you want to add the parallax effect to.</li>
+  <li>The second parameter it takes in is the modifier. This is simply an integer value used to alter the scroll speed to give the desired effect.</li>
+  <li>Within the function we are going to create another function which handles the calculation for the background position. There are two formulas you need to know here:
+let x = paraId.getBoundingClientRect().top / modifier; let y = Math.round(x * 100) / 100;</li>
+  <li>After we calculate the x and y variables we are going to update the backgroundPosition such that el.style.backgroundPosition = ‘center’ + y + px;</li>
+  <li>Then, inside the parallax function we simply want to call that function to get the values: sp();</li>
+  <li>finally while still in the function we want to call the event listener on the scroll: window.addEventListener(‘scroll’, function(e) { sp(); });</li>
+  <li>Finally, call the function with the desired parameters to get things working.</li>
+</ol>
+
+<p>parallax(‘.cont’, 6)</p>
+
+<h2 id="the-state-of-parallax-scrolling">The State Of Parallax Scrolling</h2>
+
+<p>I really do not recommend doing this. It hurts your performance and never achieves the desired user experience that you would hope for. Nevertheless, this is a good tool to have for those few use cases that it might benefit from.</p>
+:ET

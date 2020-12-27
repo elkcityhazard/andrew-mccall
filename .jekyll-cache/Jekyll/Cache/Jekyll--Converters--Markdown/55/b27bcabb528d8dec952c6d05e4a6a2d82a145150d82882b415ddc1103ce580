@@ -1,0 +1,23 @@
+I"ß<h2 id="meat-costing-calculator-project">Meat Costing Calculator Project</h2>
+
+<p>The purpose of the meat costing calculator is to assist with pricing in a retail meat setting.  This is the first version which uses vanilla Javascript, CSS, and HTML.  There is no persistent storage currently in this iteration.  As time permits, I plan to connect to a database and I will update the project.</p>
+
+<h3 id="planning-the-meat-yield-calculator">Planning The Meat Yield Calculator</h3>
+<p>The basis of the project is to make my life easier at my day job.  We are in need of reassessing meat costs and setting prices.  Since the interface is rather simple I started the project by simply listing all the formulas I needed to figure out various pieces of information.  I decided to use skeleton css as the CSS framework to make my life a little easier and focus on the Javascript logic.  Ultimately, I ended writing a lot of custom css to make it work a little nicer.</p>
+
+<p>Initially I used all regular functions to calculate the data.  This worked but it was not a good solution.  Instead, I decided to make a meat Object which worked out a lot better.  I feel like it might have contributed to a greater length of code (it might just be me) but I feel that it is easier to understand than using all functions.</p>
+
+<h3 id="implementing-the-cut-test-calculator">Implementing The Cut Test Calculator</h3>
+<p>I worked through the initial phase of the project in a linear fashion.</p>
+
+<ol>
+  <li>Wrote initial html and defined the input and outputs as needed</li>
+  <li>CSS - added as much of the CSS I could upfront.  I had to come back later when I added in the logic because I didnâ€™t quite hit the mark at first.</li>
+  <li>Initial Javascript logic.  I defined as many variables as I could and structured the event listeners and functions as well.</li>
+  <li>Wrote the initial logic and checked for functionality.</li>
+  <li>Went back and started to add error handling to make it more functional overall.</li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>The finished project can be viewed at <a class="visible inline-link" href="https://www.meatyieldtest.xyz" alt="meatyieldtest">here</a>.  I will continue to update this page as I add more features to the program!</p>
+:ET

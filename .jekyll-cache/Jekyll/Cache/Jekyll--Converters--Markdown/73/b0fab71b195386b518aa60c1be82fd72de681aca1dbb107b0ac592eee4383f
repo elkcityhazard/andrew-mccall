@@ -1,0 +1,25 @@
+I"s<h2 id="what-is-font-swap">What is Font Swap</h2>
+
+<p>Font swap is actually a descriptor of font-display property.  Font display determines how a font is loaded based on when and if it is loaded onto the page.  In a css file it would look like this:</p>
+
+<pre>
+.some-css-selector {
+    font-display: swap;
+}
+</pre>
+
+<h3 id="font-display-property-values">Font Display Property Values</h3>
+
+<ul>
+  <li>Auto
+    <ul>
+      <li>Font display is baked into the user-agent.  User-agent is the term given for default style browsers</li>
+    </ul>
+  </li>
+  <li>Block</li>
+  <li>Swap</li>
+  <li>Fallback</li>
+  <li>Optional</li>
+</ul>
+
+:ET

@@ -1,0 +1,19 @@
+I"�<h2 id="what-is-html">What is HTML?</h2>
+
+<p>HTML stands for Hypertext Markup Language.  Personally, I started writing HTML in 1998.  HTML was created in 1991 but it wasn’t until 1995 that it became common place.  Since its introduction, there has been five versions introduced.  The most current version being HTML 5 which was introduced in 2012.  In the 1990’s communication technology was increasing at a rapid pace.  As the foundation for the world wide web was being laid, there became a need to share information.  Web browsers were a new technology and HTML was the language used to communicate through the browser.  It has since stuck as the defacto language of the web browser.</p>
+
+<h3 id="what-does-hypertext-mean">What Does Hypertext Mean?</h3>
+
+<p>Hypertext is simply text that is connected through linking to another document.  It usually has a contextual clue to what the connected document contains.  For example, it might be as simple as the title of the connected document, or contextual keywords that help describe what the document is.  For Example: <a href="https://andrew-mccall.com">Home Page</a> or <a href="https://andrew-mccall.com/contact.html">This is a link to the contact page</a></p>
+
+<h3 id="learning-html-really-fast">Learning HTML Really Fast</h3>
+
+<p>Lets get to the point of this article.</p>
+
+<p>HTML is written in a very specfiic way.  An HTML document starts with an opening and closing HTML tag.  This looks like this:</p>
+<pre>
+<html>
+</html>
+<pre>
+</pre></pre>
+:ET

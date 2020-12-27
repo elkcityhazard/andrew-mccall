@@ -1,0 +1,39 @@
+$electromagnetic: rgba(47, 54, 64, 0.5);
+$rise-and-shine: rgba(251, 197, 49, 1);
+$blue-nights: rgba(53, 59, 72, 1);
+$seabrook: rgba(72, 126, 176, 1);
+$periwinkle: rgba(156, 136, 255, 1);
+$hint-of-pensive: rgba(220, 221, 225, 1);
+$nasturcian-flower: rgba(232, 65, 24, 1);
+$matte-purple: rgba(140, 122, 230, 1);
+$download-progress: rgba(76, 209, 55, 1);
+
+@media screen and (min-width: 601px) {
+  .container {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+
+  
+
+  a.brand-logo > h1 {
+    font-size: 1em;
+  }
+
+  .main-content {
+    margin: 0 auto;
+    max-width: 60ch;
+    padding-top: 100px;
+  }
+
+  a.post-title {
+    color: $periwinkle;
+    text-align: center;
+  }
+
+  .weather-data li {
+    display: inline-block;
+    font-size: 0.75em;
+  }
+}

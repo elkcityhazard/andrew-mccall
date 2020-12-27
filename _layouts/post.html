@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+<p class="post-snippet">
+  {{ page.date | date_to_string }} {% assign author = site.authors | where:
+  'short_name', page.author | first %} {% if author %} -
+  <a href="{{ author.url }}" class="author-link">{{ author.name }}</a>
+  {% endif %}
+</p>
+
+{{ content }}
+
+<div class="post-nav">
+  <div>
+    {% if page.previous.url %}
+    <a href="{{page.previous.url}}" class="visible"
+      ><span class="material-icons align-icon">
+        chevron_left
+      </span>
+      {{page.previous.title}}</a
+    >
+    {% endif %}
+  </div>
+  <div class="post-nav-next">
+    {% if page.next.url %}
+    <a href="{{page.next.url}}" class="visible"
+      >{{page.next.title}}
+      <span class="material-icons">
+        chevron_right
+      </span></a
+    >
+    {% endif %}
+  </div>
+</div>
+
+<span
+  >{% if page.tags.size > 0 %} Tag{% if page.tags.size > 1 %}s{% endif %}: {{
+  page.tags | sort | join: ", " }} {% endif %}
+</span>

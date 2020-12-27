@@ -1,0 +1,23 @@
+I"Y<h2 id="javascript-audio-player">Javascript Audio Player</h2>
+
+<p>Wanted to do a project that used some DOM manipulation and fetch api. Audio player is a good use case.</p>
+
+<h2 id="javascript-audio-player-setup">Javascript Audio Player Setup</h2>
+
+<p>Loaded in audio data as a JSON file using fetch. Set up multiple event listeners(start, stop, drag, drop, click). Used ionicons for the interface buttons and made simple css sliders for the volume and the progress bar that is activated using javascript.</p>
+
+<h2 id="technologies-used">Technologies Used</h2>
+
+<ul>
+  <li>Fetch API</li>
+  <li>Javascript</li>
+  <li>css</li>
+  <li>HTML</li>
+  <li>Async/Await</li>
+  <li>git for version control</li>
+</ul>
+
+<h3 id="final-thoughts">Final Thoughts</h3>
+
+<p>To further the project, I still need to make a feature to resume the playback at the same spot that it was stopped at. Also, possible add a better interface for changing the track. The project can be viewed at <a class="visible inline-link" href="https://elkcityhazard.github.io/audio-player/" title="javascript audio player">Javascript Audio Player</a>.</p>
+:ET

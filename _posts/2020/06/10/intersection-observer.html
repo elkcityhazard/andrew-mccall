@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-12576217-8"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-12576217-8");
+</script>
+ 
+  <!--  Meta Here -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Geo tags -->
+  <meta name="ICBM" content="44.759090, -85.605469" />
+  <meta name="geo.position" content="44.759090;-85.605469" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Traverse City" />
+  <meta name="author" content="Andrew M McCall" />
+
+  <!--  SEO and FEED META will generate title tag and description-->
+  <link type="application/atom+xml" rel="alternate" href="https://andrew-mccall.com/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Intersection Observer API</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="Intersection Observer API" />
+<meta name="author" content="andrew" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Intersection Observer API allows us to asynchronously watch a DOM element and make changes to it base on its intersection with the viewport." />
+<meta property="og:description" content="Intersection Observer API allows us to asynchronously watch a DOM element and make changes to it base on its intersection with the viewport." />
+<link rel="canonical" href="https://andrew-mccall.com/2020/06/10/intersection-observer.html" />
+<meta property="og:url" content="https://andrew-mccall.com/2020/06/10/intersection-observer.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-10T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Intersection Observer API","dateModified":"2020-06-10T00:00:00-04:00","datePublished":"2020-06-10T00:00:00-04:00","description":"Intersection Observer API allows us to asynchronously watch a DOM element and make changes to it base on its intersection with the viewport.","url":"https://andrew-mccall.com/2020/06/10/intersection-observer.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://andrew-mccall.com/2020/06/10/intersection-observer.html"},"author":{"@type":"Person","name":"andrew"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--  Link To StyleSheets Here  -->
+
+  <link rel="stylesheet" href="/assets/css/normalize.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/png" href="/assets/images/owl-icon.png" />
+
+  <!-- Prefetching Here  -->
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="prefetch"
+  />
+
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+
+  <link rel="preconnect" href="https://kit-free.fontawesome.com" />
+  <!--  Scripts -->
+  <script
+    src="https://kit.fontawesome.com/b7109d4350.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+
+  <body>
+    <header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="navigation toggle">
+    <a href="/" class="brand-logo visible" title="Andrew M McCall">
+    <h1>Intersection Observer API</h1></a>    <nav>
+    <div class="nav-container">
+                <ul>
+            
+            <li><a class="active" href="/" >
+              Home
+            </a></li>
+          
+            <li><a class="active" href="/about.html" >
+              About
+            </a></li>
+          
+            <li><a class="active" href="/blog.html" >
+              Blog
+            </a></li>
+          
+            <li><a class="active" href="/contact.html" >
+              Contact
+            </a></li>
+          
+            <li><a class="active" href="/staff.html" >
+              Contributors
+            </a></li>
+          
+        </ul>
+    </div>
+</nav>
+<label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+</header>
+    <div class="container">
+      <main class="main-content">
+        <h2>Intersection Observer API</h2>
+
+<p class="post-snippet">
+  10 Jun 2020   -
+  <a href="/authors/andrew.html" class="author-link">Andrew McCall</a>
+  
+</p>
+
+<p><img data-src="/assets/images/posts/intersection-observer.jpg" alt="Intersection Being Observed" title="Intersection Being Observed" class="img-responsive" /></p>
+
+<p>I wanted to be able to easily load an animation if an element came into view. Intersection observer seems to be the quickest way for me. If you want to use this for lazy loading you can give your images a data-src property instead of src then assign the data-src to the src when the element comes into view.</p>
+
+<p>My basic template is:</p>
+
+<pre>
+let images = document.querySelectorAll('.image-class');
+
+observer = new IntersectionObserver((entries) =&gt; {
+  entries.forEach(entry =&gt; {
+    if (entry.intersectionRatio &gt; 0) {
+      let attr = image.target.getAttribute('data-src');
+      image.target.src = attr;
+      entry.target.classList.add("animate__animated");
+      entry.target.classList.add("animate__fadeIn");
+      observer.unobserve(entry.target);
+    } else {
+      //entry.target.classList.remove('animate__animated animate__bounce');
+      return;
+    }
+  });
+});
+
+images.forEach(image =&gt; {
+  observer.observe(image);
+});
+</pre>
+
+<p>This is the basic set up. If you have an image that you want to lazy load you can do something like this:</p>
+
+<p><code>
+&lt;img data-src="url" alt="image alt" class="image-class"&gt;
+</code>
+and in the javascript you can add:</p>
+
+<pre>
+let attr = image.target.getAttribute('data-src');
+      image.target.src = attr;
+</pre>
+
+<p>to the function body.</p>
+
+<p>Intersection observer takes two arguments: the element to be observed and the options.</p>
+
+<pre>
+let options = {
+  root: null
+  rootMargin: "0px",
+  threshold: 1.0,
+};
+let observer = new intersectionObserver((images, options) =&gt; {
+    //Do something with images
+});
+</pre>
+
+<p>root: defines what the viewport area is. If null it will default to the viewport. But you can also use document.getELementById to pick a intersection cross section.</p>
+
+<p>rootMargin: is similar to margin in that it adds margin to your intersection observer entry so that it will trigger with margin added to it.</p>
+
+<p>threshold: is how much should be in the observation area before the request triggers. For example 1.0 means the entire element needs to be in the viewport. This can also be an array so that the callback runs every time visibility passes a threshhold. For example:</p>
+
+<pre>[0, 0.25, 0.5, 0.75, 1.0]</pre>
+
+
+<div class="post-nav">
+  <div>
+    
+  </div>
+  <div class="post-nav-next">
+    
+    <a href="/2020/06/11/console-log-a-chess-board.html" class="visible"
+      >Console.Log A Chessboard
+      <span class="material-icons">
+        chevron_right
+      </span></a
+    >
+    
+  </div>
+</div>
+
+<span
+  > Tags: javascript, web development 
+</span>
+ 
+        </main>
+        <footer class="main-footer">
+  <div class="container">
+    <div class="col">
+      <ul class="weather-data">
+        <li>&#169; 2020</li>
+        <li>
+          <a class="visible inline-link" href="/contact.html"
+            >Andrew M McCall</a
+          >
+        </li>
+        <li><a class="visible inline-link" href="/" title="home">Home</a></li>
+        <li>
+          <a class="visible inline-link" href="/blog.html" title="blog">Blog</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col weather"></div>
+  </div>
+</footer>
+<script src="/assets/js/observer.js"></script>
+
+<script src="/assets/js/weather.js"></script>
+
+      </body>
+      </html>
+    

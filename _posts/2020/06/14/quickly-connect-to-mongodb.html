@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-12576217-8"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-12576217-8");
+</script>
+ 
+  <!--  Meta Here -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Geo tags -->
+  <meta name="ICBM" content="44.759090, -85.605469" />
+  <meta name="geo.position" content="44.759090;-85.605469" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Traverse City" />
+  <meta name="author" content="Andrew M McCall" />
+
+  <!--  SEO and FEED META will generate title tag and description-->
+  <link type="application/atom+xml" rel="alternate" href="https://andrew-mccall.com/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Quickly Connect To MongoDB In NodeJS</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="Quickly Connect To MongoDB In NodeJS" />
+<meta name="author" content="andrew" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mongodb is a powerful database application and NodeJs has no problem connecting to it quickly." />
+<meta property="og:description" content="Mongodb is a powerful database application and NodeJs has no problem connecting to it quickly." />
+<link rel="canonical" href="https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb.html" />
+<meta property="og:url" content="https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-14T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Quickly Connect To MongoDB In NodeJS","dateModified":"2020-06-14T00:00:00-04:00","datePublished":"2020-06-14T00:00:00-04:00","description":"Mongodb is a powerful database application and NodeJs has no problem connecting to it quickly.","url":"https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb.html"},"author":{"@type":"Person","name":"andrew"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--  Link To StyleSheets Here  -->
+
+  <link rel="stylesheet" href="/assets/css/normalize.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/png" href="/assets/images/owl-icon.png" />
+
+  <!-- Prefetching Here  -->
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="prefetch"
+  />
+
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+
+  <link rel="preconnect" href="https://kit-free.fontawesome.com" />
+  <!--  Scripts -->
+  <script
+    src="https://kit.fontawesome.com/b7109d4350.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+
+  <body>
+    <header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="navigation toggle">
+    <a href="/" class="brand-logo visible" title="Andrew M McCall">
+    <h1>Quickly Connect To MongoDB In NodeJS</h1></a>    <nav>
+    <div class="nav-container">
+                <ul>
+            
+            <li><a class="active" href="/" >
+              Home
+            </a></li>
+          
+            <li><a class="active" href="/about.html" >
+              About
+            </a></li>
+          
+            <li><a class="active" href="/blog.html" >
+              Blog
+            </a></li>
+          
+            <li><a class="active" href="/contact.html" >
+              Contact
+            </a></li>
+          
+            <li><a class="active" href="/staff.html" >
+              Contributors
+            </a></li>
+          
+        </ul>
+    </div>
+</nav>
+<label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+</header>
+    <div class="container">
+      <main class="main-content">
+        <h2>Quickly Connect To MongoDB In NodeJS</h2>
+
+<p class="post-snippet">
+  14 Jun 2020   -
+  <a href="/authors/andrew.html" class="author-link">Andrew McCall</a>
+  
+</p>
+
+<p>I will get quickly to the point.</p>
+
+<pre>
+const express = require("express");
+const app = express();
+const mongodb = require("mongodb");
+const router = require("./router");
+let db;
+
+connectionString =
+  "your mongo connection string here"
+
+app.set("views", "views");
+app.set("view engine", "ejs");
+
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false })); //  boilerplate to initialize req.body.input-name
+app.use(express.json());
+app.use("/", router);
+app.use("/thanks", router);
+
+mongodb.connect(
+  connectionString,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  function (err, client) {
+    db = client.db();
+    app.listen(port number);
+  }
+);
+</pre>
+
+<ol>
+  <li>make sure node.js is installed on your system.</li>
+  <li>start a new project.</li>
+  <li>using terminal, cd into project directory.</li>
+  <li>npm init -y
+create app.js</li>
+  <li>You need to know your mongodb database name and collection</li>
+  <li>npm install mongodb</li>
+  <li>in app.js require and initialize express.</li>
+  <li>require mongodb and initialize routes if available</li>
+  <li>initialize db variable.</li>
+  <li>to get form data you need to use the express.urlencoded feature to get req.body.input-name</li>
+  <li>monbodb.connect takes 3 arguments
+connectionstring (from mongodb), an object, and then a function</li>
+  <li>make sure to establish database connection before listening on the port</li>
+</ol>
+
+<p>These are quick and dirty notes for communicating with the database server.</p>
+
+
+<div class="post-nav">
+  <div>
+    
+    <a href="/2020/06/11/console-log-a-chess-board.html" class="visible"
+      ><span class="material-icons align-icon">
+        chevron_left
+      </span>
+      Console.Log A Chessboard</a
+    >
+    
+  </div>
+  <div class="post-nav-next">
+    
+    <a href="/2020/06/19/recursive-functions.html" class="visible"
+      >Recursive Functions
+      <span class="material-icons">
+        chevron_right
+      </span></a
+    >
+    
+  </div>
+</div>
+
+<span
+  > Tags: javascript, web development 
+</span>
+ 
+        </main>
+        <footer class="main-footer">
+  <div class="container">
+    <div class="col">
+      <ul class="weather-data">
+        <li>&#169; 2020</li>
+        <li>
+          <a class="visible inline-link" href="/contact.html"
+            >Andrew M McCall</a
+          >
+        </li>
+        <li><a class="visible inline-link" href="/" title="home">Home</a></li>
+        <li>
+          <a class="visible inline-link" href="/blog.html" title="blog">Blog</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col weather"></div>
+  </div>
+</footer>
+<script src="/assets/js/observer.js"></script>
+
+<script src="/assets/js/weather.js"></script>
+
+      </body>
+      </html>
+    

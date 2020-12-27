@@ -1,0 +1,24 @@
+
+<header>
+  <div class="row">
+    <div class="col-25">
+    <a href="/" class="brand-logo visible" title="Andrew M McCall"> 
+      <h1>Andrew M McCall</h1></a>
+  </div>
+  <div class="col-75">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="navigation toggle">  
+    <nav>
+   <div class="nav-container">
+               <ul>
+           {% for item in site.data.navigation %}
+           <li><a class="active" href="{{ item.link }}" {% if page.url == item.link %}{% endif %}>
+             {{ item.name }}
+           </a></li>
+         {% endfor %}
+       </ul>
+   </div>
+</nav>
+<label for="nav-toggle" class="nav-toggle-label" aria-role="navigation"><span></span></label>
+  </div>
+    
+</header>

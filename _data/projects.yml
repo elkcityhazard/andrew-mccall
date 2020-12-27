@@ -1,0 +1,17 @@
+- name: Meat Costing Calculator
+  link: /projects/meat-yield.html
+  description: A simple app to determine protein costs for retail meat operations composed with vanilla javascript, css, and html.
+  img: ../assets/images/projects/calculator.jpg
+  project-url: https://elkcityhazard.github.io/node-meat-app/
+
+- name: Background Changer
+  link: /projects/background-changer.html
+  description: Click the button, change the background. Generates random hex and looks it up using API to return color name.
+  img: ../assets/images/projects/background-changer.jpg
+  project-url: https://elkcityhazard.github.io/background-changer/
+
+- name: Javascript Audio Player
+  link: /projects/javascript-audio-player.html
+  description: Javascript Audio Player Using DOM manipulation, JSON, fetch API, async/await, and native HTML audio
+  img: ../assets/images/projects/audio.jpg
+  project-url: https://elkcityhazard.github.io/audio-player/

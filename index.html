@@ -1,0 +1,38 @@
+---
+layout: default
+title: Andrew M McCall
+description: Andrew McCall is a freelance web developer based in Traverse City Michigan.  He specializes in Wordpress, Jekyll, HTML/CSS, Javascript and React.  He is excited to help you find a simple solution to a complex problem and drink plenty of coffee along the way.
+---
+<article class="row">
+<header class="main-header">
+  
+</header>
+</article>
+
+<section class="latest-post">
+  <div class="latest-post-cont">
+    <h3>Latest Post</h3>
+    <article>
+      <ul>
+        {% for post in site.posts limit: 1 %}
+        <li>
+          <a href="{{post.url}}" title="{{post.title}}" class="visible"
+            >{{post.title}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </article>
+  </div>
+
+  <div class="latest-post-cont">
+    <h3>Recent Posts</h3>
+    <article>
+      {% for post in site.posts offset: 1 limit: 2 %}
+      <a href="{{post.url}}" title="{{post.title}}" class="visible"
+        >{{post.title}}</a
+      >
+      {% endfor %}
+    </article>
+  </div>
+</section>

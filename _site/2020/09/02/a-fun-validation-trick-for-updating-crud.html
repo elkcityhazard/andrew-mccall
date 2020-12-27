@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12576217-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12576217-8');
+</script>
+
+  <!--  Meta Here -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Geo tags -->
+  <meta name="ICBM" content="44.759090, -85.605469" />
+  <meta name="geo.position" content="44.759090;-85.605469" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Traverse City" />
+  <meta name="author" content="Andrew M McCall" />
+
+  <!--  SEO and FEED META will generate title tag and description-->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Give Back Useful Information For CRUD PATCH Updates</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="Give Back Useful Information For CRUD PATCH Updates" />
+<meta name="author" content="andrew" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A simple way to give feedback on findByIDandUpdate commands using nodejs, express, mongodb, and mongoose" />
+<meta property="og:description" content="A simple way to give feedback on findByIDandUpdate commands using nodejs, express, mongodb, and mongoose" />
+<link rel="canonical" href="http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud.html" />
+<meta property="og:url" content="http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-02T00:00:00-04:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Give Back Useful Information For CRUD PATCH Updates","url":"http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud.html","dateModified":"2020-09-02T00:00:00-04:00","datePublished":"2020-09-02T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud.html"},"author":{"@type":"Person","name":"andrew"},"description":"A simple way to give feedback on findByIDandUpdate commands using nodejs, express, mongodb, and mongoose","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Prefetching Here  -->
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="prefetch"
+  />
+
+  <link rel="prefetch" href="https://kit-free.fontawesome.com" />
+  <link rel="prefetch" href="https://openweathermap.org">
+
+  <!--  Link To StyleSheets Here  -->
+
+  <link rel="stylesheet" href="/assets/css/normalize.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="/assets/css/animate.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/png" href="/assets/images/owl-icon.png" />
+
+  <!--  Scripts -->
+  <script
+    src="https://kit.fontawesome.com/b7109d4350.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Plausible Tracking-->
+  <script async defer data-domain="andrew-mccall.com" src="http://stats.andrewmccall.xyz/js/plausible.js"></script>
+
+
+</head>
+
+  <body>
+    
+<header>
+  <div class="row">
+    <div class="col-25">
+    <a href="/" class="brand-logo visible" title="Andrew M McCall"> 
+      <h1>Andrew M McCall</h1></a>
+  </div>
+  <div class="col-75">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="navigation toggle">  
+    <nav>
+   <div class="nav-container">
+               <ul>
+           
+           <li><a class="active" href="/" >
+             Home
+           </a></li>
+         
+           <li><a class="active" href="/about.html" >
+             About
+           </a></li>
+         
+           <li><a class="active" href="/blog.html" >
+             Blog
+           </a></li>
+         
+           <li><a class="active" href="/contact.html" >
+             Contact
+           </a></li>
+         
+           <li><a class="active" href="/projects" >
+             Projects
+           </a></li>
+         
+       </ul>
+   </div>
+</nav>
+<label for="nav-toggle" class="nav-toggle-label" aria-role="navigation"><span></span></label>
+  </div>
+    
+</header>
+
+    <div class="container">
+      <main class="main-content">
+        <h2>Give Back Useful Information For CRUD PATCH Updates</h2>
+
+<p class="post-snippet">
+  02 Sep 2020  
+</p>
+
+<h2 id="return-useful-information-to-your-users-regarding-crud-operations">Return useful information to your users regarding crud operations</h2>
+
+<pre>exports.updateSingleTask = async (req, res, next) =&gt; {
+const updates = Object.keys(req.body);
+const allowedUpdates = ['description', 'completed'];
+const isValidOperation = updates.every((update) =&gt; {
+return allowedUpdates.includes(update);
+})
+
+    if (!isValidOperation) {
+        return res.status(400).send({error: "The property you tried to update does not exist"})
+    }
+    try {
+
+const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+new: true,
+runValidators: true
+})
+if (!task) {
+return res.status(404).send();
+}
+res.send(task)
+} catch(err) {
+res.status(400).send(err);
+}
+}</pre>
+
+<h3 id="how-user-feedback-works">How User Feedback Works</h3>
+
+<p>The problem: A user somehow defines an object property that does not exist in your database.</p>
+
+<p>For example, lets say you have a task to update. There might be a description and also a completed attribute. Lets say the user wants to use a PATCH request to update that bad boy but for whatever reason they end sending something like this:</p>
+
+<p><code class="language-plaintext highlighter-rouge">{ "date" : "mm:dd:yyyy" }</code></p>
+
+<p>Of course, mongoose would just accept this as a valid operation but nothing useful would return to the user that they made a mistake.</p>
+
+<p>The answer: create a check for allowed updates and only continue the operation if it returns true.</p>
+
+<pre>exports.updateSingleTask = async (req, res, next) =&gt; {
+const updates = Object.keys(req.body);
+const allowedUpdates = ['description', 'completed'];
+const isValidOperation = updates.every((update) =&gt; {
+return allowedUpdates.includes(update);
+})
+
+    if (!isValidOperation) {
+        return res.status(400).send({error: "The property you tried to update does not exist"})
+    }</pre>
+
+<ol>
+  <li>parse the req.body object into an array</li>
+  <li>create an allowedUpdates variable to establish which propertiecan be updated</li>
+  <li>check to see if the data sent to the server is a valid operation.using the every method check to see if each value in the updatevariable is in the allowedUpdates list. If all of them are indeeincluded then isValidation will return true and the operation wilcontinue as normal. If isValidOperator returns false then return 400 error with some useful information for the user.</li>
+</ol>
+
+<p>This is a fun little example to help provide more useful feedback the user.</p>
+
+
+<div class="post-nav">
+  <div>
+    
+    <a href="/2020/07/11/the-struggle-to-learn-programming-is-real.html" class="visible"
+      ><span class="material-icons align-icon">
+        chevron_left
+      </span>
+      The Surprising Way To Avoid Failure Learning To Code As An Adult</a
+    >
+    
+  </div>
+  <div class="post-nav-next">
+    
+    <a href="/2020/10/06/easy-parallax-scrolling.html" class="visible"
+      >Simple Parallax Scrolling
+      <span class="material-icons">
+        chevron_right
+      </span></a
+    >
+    
+  </div>
+</div>
+
+<span
+  > Tags: javascript, learn to code, web development 
+</span>
+ 
+        </main>
+        <footer class="main-footer">
+  <div class="container">
+    <div class="col">
+      <ul class="weather-data">
+        <li>&#169; 2020</li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/contact.html"
+            >Andrew M McCall</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/"
+            title="home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/blog.html"
+            title="blog"
+            >Blog</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/projects"
+            title="projects"
+            >Projects</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col weather"></div>
+  </div>
+</footer>
+<script src="/assets/js/observer.js"></script>
+
+<script src="/assets/js/weather.js" defer></script>
+
+<script src="/assets/js/nav.js" defer></script>
+<script src="/assets/js/blogLoader.js" defer></script>
+
+
+      </body>
+      </html>
+    

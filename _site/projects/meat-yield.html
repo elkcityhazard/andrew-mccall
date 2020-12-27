@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12576217-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12576217-8');
+</script>
+
+  <!--  Meta Here -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Geo tags -->
+  <meta name="ICBM" content="44.759090, -85.605469" />
+  <meta name="geo.position" content="44.759090;-85.605469" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Traverse City" />
+  <meta name="author" content="Andrew M McCall" />
+
+  <!--  SEO and FEED META will generate title tag and description-->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Javascript Meat Yield Calculator</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="Javascript Meat Yield Calculator" />
+<meta name="author" content="andrew" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A simple calculator to help with food and meat costing written with vanilla javascript." />
+<meta property="og:description" content="A simple calculator to help with food and meat costing written with vanilla javascript." />
+<link rel="canonical" href="http://localhost:4000/projects/meat-yield.html" />
+<meta property="og:url" content="http://localhost:4000/projects/meat-yield.html" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Javascript Meat Yield Calculator","url":"http://localhost:4000/projects/meat-yield.html","author":{"@type":"Person","name":"andrew"},"description":"A simple calculator to help with food and meat costing written with vanilla javascript.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Prefetching Here  -->
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    rel="prefetch"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="prefetch"
+  />
+
+  <link rel="prefetch" href="https://kit-free.fontawesome.com" />
+  <link rel="prefetch" href="https://openweathermap.org">
+
+  <!--  Link To StyleSheets Here  -->
+
+  <link rel="stylesheet" href="/assets/css/normalize.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="/assets/css/animate.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/png" href="/assets/images/owl-icon.png" />
+
+  <!--  Scripts -->
+  <script
+    src="https://kit.fontawesome.com/b7109d4350.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Plausible Tracking-->
+  <script async defer data-domain="andrew-mccall.com" src="http://stats.andrewmccall.xyz/js/plausible.js"></script>
+
+
+</head>
+
+  <body>
+    
+<header>
+  <div class="row">
+    <div class="col-25">
+    <a href="/" class="brand-logo visible" title="Andrew M McCall"> 
+      <h1>Andrew M McCall</h1></a>
+  </div>
+  <div class="col-75">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="navigation toggle">  
+    <nav>
+   <div class="nav-container">
+               <ul>
+           
+           <li><a class="active" href="/" >
+             Home
+           </a></li>
+         
+           <li><a class="active" href="/about.html" >
+             About
+           </a></li>
+         
+           <li><a class="active" href="/blog.html" >
+             Blog
+           </a></li>
+         
+           <li><a class="active" href="/contact.html" >
+             Contact
+           </a></li>
+         
+           <li><a class="active" href="/projects" >
+             Projects
+           </a></li>
+         
+       </ul>
+   </div>
+</nav>
+<label for="nav-toggle" class="nav-toggle-label" aria-role="navigation"><span></span></label>
+  </div>
+    
+</header>
+
+    <div class="container">
+      <main class="main-content">
+        <h2 id="meat-costing-calculator-project">Meat Costing Calculator Project</h2>
+
+<p>The purpose of the meat costing calculator is to assist with pricing in a retail meat setting.  This is the first version which uses vanilla Javascript, CSS, and HTML.  There is no persistent storage currently in this iteration.  As time permits, I plan to connect to a database and I will update the project.</p>
+
+<h3 id="planning-the-meat-yield-calculator">Planning The Meat Yield Calculator</h3>
+<p>The basis of the project is to make my life easier at my day job.  We are in need of reassessing meat costs and setting prices.  Since the interface is rather simple I started the project by simply listing all the formulas I needed to figure out various pieces of information.  I decided to use skeleton css as the CSS framework to make my life a little easier and focus on the Javascript logic.  Ultimately, I ended writing a lot of custom css to make it work a little nicer.</p>
+
+<p>Initially I used all regular functions to calculate the data.  This worked but it was not a good solution.  Instead, I decided to make a meat Object which worked out a lot better.  I feel like it might have contributed to a greater length of code (it might just be me) but I feel that it is easier to understand than using all functions.</p>
+
+<h3 id="implementing-the-cut-test-calculator">Implementing The Cut Test Calculator</h3>
+<p>I worked through the initial phase of the project in a linear fashion.</p>
+
+<ol>
+  <li>Wrote initial html and defined the input and outputs as needed</li>
+  <li>CSS - added as much of the CSS I could upfront.  I had to come back later when I added in the logic because I didn’t quite hit the mark at first.</li>
+  <li>Initial Javascript logic.  I defined as many variables as I could and structured the event listeners and functions as well.</li>
+  <li>Wrote the initial logic and checked for functionality.</li>
+  <li>Went back and started to add error handling to make it more functional overall.</li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>The finished project can be viewed at <a class="visible inline-link" href="https://www.meatyieldtest.xyz" alt="meatyieldtest">here</a>.  I will continue to update this page as I add more features to the program!</p>
+ 
+        </main>
+        <footer class="main-footer">
+  <div class="container">
+    <div class="col">
+      <ul class="weather-data">
+        <li>&#169; 2020</li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/contact.html"
+            >Andrew M McCall</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/"
+            title="home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/blog.html"
+            title="blog"
+            >Blog</a
+          >
+        </li>
+        <li>
+          <a
+            class="visible inline-link"
+            href="/projects"
+            title="projects"
+            >Projects</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col weather"></div>
+  </div>
+</footer>
+<script src="/assets/js/observer.js"></script>
+
+<script src="/assets/js/weather.js" defer></script>
+
+
+      </body>
+      </html>
+    
