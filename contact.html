@@ -11,7 +11,7 @@ description: Andrew McCall is interestedin helping you to solve a critical digit
 >
 <div class="text-container">
   <form
-    action="https://formspree.io/xjvarrlj"
+    action="https://api.formcake.com/api/form/0d18e489-8207-4c91-b8cd-4ecd9acd07f7/submission"
     method="POST"
     class="contact-form"
   >
@@ -27,6 +27,11 @@ description: Andrew McCall is interestedin helping you to solve a critical digit
       required
     />
     <small class="error" id="email-error">Invalid Email Entry!</small>
+    <div class="form-control">
+      <label for="username">Username: </label>
+    <input type="text" name="username" id="username">
+    <small class="error" id="username-error">Invalid Username Entry!</small>
+    </div>
     <textarea
       name="user_message"
       id="message"
@@ -44,3 +49,46 @@ Please Enter A Message</textarea
     </div>
   </form>
 </div>
+
+<script>
+form = document.querySelector('.contact-form');
+
+form.addEventListener('submit', (event) => {
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const message = document.getElementById('message');
+
+async function sendMail(method,url, callback) {
+  const formData = {
+  name: name.value,
+  email: email.value,
+  message: message.value
+}
+const parsedData = JSON.stringify(formData);
+  const xhr = new XMLHttpRequest();
+await xhr.open(method, url);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    callback(this.responseText);
+  }
+}
+
+xhr.onerror = function() {
+  callback(this.response);
+}
+
+  xhr.send(parsedData);
+}
+sendMail('POST', 'https://api.formcake.com/api/form/0d18e489-8207-4c91-b8cd-4ecd9acd07f7/submission', function(res) {
+ let div = document.createElement('div');
+ div.textContent = "Thank you for submitting";
+ form.appendChild(div);
+
+})
+  event.preventDefault();
+})
+
+
+</script>

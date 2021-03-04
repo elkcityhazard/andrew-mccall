@@ -43,6 +43,7 @@ h1 {
   font-size: 0.75em;
 }
 
+
 a.brand-logo {
   font-size: 2em;
   margin-top: 40px;
@@ -172,6 +173,11 @@ a.active {
   color: $periwinkle;
 }
 
+p + a,
+p + a:visited {
+  display: inline;
+}
+
 .nav-toggle-label {
   position: absolute;
   top: 0;
@@ -257,6 +263,8 @@ a.post-nav {
 }
 
 .main-content ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   list-style-position: inside;
   margin: 0;
@@ -392,16 +400,22 @@ a.smaller {
   opacity: initial;
 }
 
-.social-list {
-  display: block;
+ul.social-list {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   padding: 0;
   margin: 10px auto;
+  justify-content: center;
   text-align: center;
+  &:after {
+    display: none;
+  }
 }
 
-.social-list li {
-  display: inline;
+ul.social-list li {
+  align-self: center;
   padding: 0;
   margin: 0;
 }
@@ -423,11 +437,12 @@ a.smaller {
 }
 
 .social-list li {
-  display: inline-block;
+  display: inline;
   margin: 20px 0em;
 }
 
 .social-icons {
+  display: inline-block;
   margin: 0;
   padding: 0.75em;
   color: $matte-purple;
@@ -453,6 +468,10 @@ label {
 textarea {
   margin: 10px auto;
   width: 100%;
+}
+
+.form-control {
+  display: none;
 }
 
 .error {

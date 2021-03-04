@@ -22,7 +22,7 @@ function checkForm(name, email, message) {
   if (name.value === "") {
     nameError.textContent = "You Must Enter A Name";
     nameError.classList.add("error-show");
-    e.preventDefault();
+    
   } else if (name.value.length > null && name.value.length < 4) {
     nameError.textContent = "Name cannot be less than 4 characters...";
     nameError.classList.add("error-show");
@@ -30,7 +30,6 @@ function checkForm(name, email, message) {
   } else if (name.value.length > 12) {
     nameError.textContent = "Name cannot exceed 12 characters...";
     nameError.classList.add("error-show");
-    e.preventDefault();
   } else {
     nameError.classList.remove("error-show");
   }
@@ -40,7 +39,6 @@ function checkForm(name, email, message) {
     emailError.textContent =
       "Sorry, this email is not valid, please try again.";
     emailError.classList.add("errow-show");
-    e.preventDefault();
   } else {
     emailError.classList.remove("error-show");
     return;
@@ -49,7 +47,6 @@ function checkForm(name, email, message) {
     messageError.textContent =
       "Please enter a nice message.  I would love to meet you.";
     messageError.classList.add("error-show");
-    e.preventDefault();
   } else {
     messageError.classList.remove("error-show");
     return;

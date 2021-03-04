@@ -159,6 +159,11 @@ a.active {
   color: #9c88ff;
 }
 
+p + a,
+p + a:visited {
+  display: inline;
+}
+
 .nav-toggle-label {
   position: absolute;
   top: 0;
@@ -245,6 +250,8 @@ a.post-nav {
 }
 
 .main-content ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   list-style-position: inside;
   margin: 0;
@@ -376,16 +383,22 @@ a.smaller {
   opacity: initial;
 }
 
-.social-list {
-  display: block;
+ul.social-list {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   padding: 0;
   margin: 10px auto;
+  justify-content: center;
   text-align: center;
 }
+ul.social-list:after {
+  display: none;
+}
 
-.social-list li {
-  display: inline;
+ul.social-list li {
+  align-self: center;
   padding: 0;
   margin: 0;
 }
@@ -400,11 +413,12 @@ a.smaller {
 }
 
 .social-list li {
-  display: inline-block;
+  display: inline;
   margin: 20px 0em;
 }
 
 .social-icons {
+  display: inline-block;
   margin: 0;
   padding: 0.75em;
   color: #8c7ae6;
@@ -430,6 +444,10 @@ label {
 textarea {
   margin: 10px auto;
   width: 100%;
+}
+
+.form-control {
+  display: none;
 }
 
 .error {
@@ -660,6 +678,10 @@ button[type=reset]:hover::after {
   section > div > article {
     text-align: center;
   }
+  section > div > article ul {
+    display: flex;
+    flex-direction: column;
+  }
 
   .tag-list > ul > li > a {
     text-align: center;
@@ -739,24 +761,39 @@ button[type=reset]:hover::after {
   }
 
   ul li {
-    display: inline-block;
     margin-bottom: 1em;
     margin-left: 1.5em;
     text-transform: none;
   }
 
-  .main-content > ul > li {
+  .main-content .row {
+    flex-direction: column;
+  }
+  .main-content ul {
+    flex-direction: column;
+  }
+  .main-content ul li {
     color: #4cd137;
+  }
+  .main-content ul.social-list {
+    flex-direction: row;
+  }
+  .main-content ul.social-list li a {
+    color: #487eb0;
+    transition: color 250ms ease-in-out 100ms;
+  }
+  .main-content ul.social-list li a:hover {
+    color: #fbc531;
   }
 
   a,
 a:visited {
     color: #fbc531;
-    display: block;
+    display: inline;
     font-family: "SourceCodePro", sans-serif, monospace;
     font-size: 1.2rem;
     margin: 0 auto;
-    padding: 0.5em 1em;
+    padding: 0.5em 0em;
     text-decoration: none;
     opacity: 1;
     transition: opacity 150ms ease-in-out;
@@ -863,7 +900,7 @@ a:visited {
   }
 
   .row a {
-    display: inline;
+    display: block;
     position: initial;
   }
 

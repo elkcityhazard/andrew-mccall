@@ -22,17 +22,17 @@
   <meta name="author" content="Andrew M McCall" />
 
   <!--  SEO and FEED META will generate title tag and description-->
-  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <link type="application/atom+xml" rel="alternate" href="https://andrew-mccall.com/feed.xml" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Contact Me</title>
 <meta name="generator" content="Jekyll v4.1.0" />
 <meta property="og:title" content="Contact Me" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Andrew McCall is interestedin helping you to solve a critical digital problem. Use the provided form to contact Andrew McCall" />
 <meta property="og:description" content="Andrew McCall is interestedin helping you to solve a critical digital problem. Use the provided form to contact Andrew McCall" />
-<link rel="canonical" href="http://localhost:4000/contact.html" />
-<meta property="og:url" content="http://localhost:4000/contact.html" />
+<link rel="canonical" href="https://andrew-mccall.com/contact.html" />
+<meta property="og:url" content="https://andrew-mccall.com/contact.html" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"Contact Me","url":"http://localhost:4000/contact.html","description":"Andrew McCall is interestedin helping you to solve a critical digital problem. Use the provided form to contact Andrew McCall","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"https://andrew-mccall.com/contact.html","description":"Andrew McCall is interestedin helping you to solve a critical digital problem. Use the provided form to contact Andrew McCall","headline":"Contact Me","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -72,8 +72,7 @@
     src="https://kit.fontawesome.com/b7109d4350.js"
     crossorigin="anonymous"
   ></script>
-  <!-- Plausible Tracking-->
-  <script async defer data-domain="andrew-mccall.com" src="http://stats.andrewmccall.xyz/js/plausible.js"></script>
+ 
 
 
 </head>
@@ -129,7 +128,7 @@
 >
 <div class="text-container">
   <form
-    action="https://formspree.io/xjvarrlj"
+    action="https://api.formcake.com/api/form/0d18e489-8207-4c91-b8cd-4ecd9acd07f7/submission"
     method="POST"
     class="contact-form"
   >
@@ -145,6 +144,11 @@
       required
     />
     <small class="error" id="email-error">Invalid Email Entry!</small>
+    <div class="form-control">
+      <label for="username">Username: </label>
+    <input type="text" name="username" id="username">
+    <small class="error" id="username-error">Invalid Username Entry!</small>
+    </div>
     <textarea
       name="user_message"
       id="message"
@@ -162,6 +166,49 @@ Please Enter A Message</textarea
     </div>
   </form>
 </div>
+
+<script>
+form = document.querySelector('.contact-form');
+
+form.addEventListener('submit', (event) => {
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const message = document.getElementById('message');
+
+async function sendMail(method,url, callback) {
+  const formData = {
+  name: name.value,
+  email: email.value,
+  message: message.value
+}
+const parsedData = JSON.stringify(formData);
+  const xhr = new XMLHttpRequest();
+await xhr.open(method, url);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    callback(this.responseText);
+  }
+}
+
+xhr.onerror = function() {
+  callback(this.response);
+}
+
+  xhr.send(parsedData);
+}
+sendMail('POST', 'https://api.formcake.com/api/form/0d18e489-8207-4c91-b8cd-4ecd9acd07f7/submission', function(res) {
+ let div = document.createElement('div');
+ div.textContent = "Thank you for submitting";
+ form.appendChild(div);
+
+})
+  event.preventDefault();
+})
+
+
+</script>
  
         </main>
         <footer class="main-footer">

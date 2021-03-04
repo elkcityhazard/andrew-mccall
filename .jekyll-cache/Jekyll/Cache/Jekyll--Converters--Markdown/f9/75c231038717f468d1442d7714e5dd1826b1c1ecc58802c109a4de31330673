@@ -1,0 +1,11 @@
+I"'<h2 id="on-point-cutlery">On Point Cutlery</h2>
+
+<p>On Point Cutlery provides <a href="https://onpointcutlery.com">knife sharpening in Traverse City, Michigan</a>.  This project is maintained on github and hosted on vercel.  It is built using Hugo page builder.  The site is created using simple HTML, CSS, and a small bit of vanilla javascript.</p>
+
+<h2 id="about-on-point-cutlery">About On Point Cutlery</h2>
+
+<p>The site is designed to be simple for the client/owner.  The client did not want to spend a lot of time maintaining updates.  They more or less wanted a brochure style website that could help increase their brand and have a professional landing page on the internet.</p>
+
+<p>Javascript was used to configure the mobile menu, add in some lazy loading, and also validate the contact form.</p>
+
+:ET

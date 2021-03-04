@@ -82,6 +82,10 @@
   section > div > article {
     text-align: center;
   }
+  section > div > article ul {
+    display: flex;
+    flex-direction: column;
+  }
 
   .tag-list > ul > li > a {
     text-align: center;
@@ -161,24 +165,39 @@
   }
 
   ul li {
-    display: inline-block;
     margin-bottom: 1em;
     margin-left: 1.5em;
     text-transform: none;
   }
 
-  .main-content > ul > li {
+  .main-content .row {
+    flex-direction: column;
+  }
+  .main-content ul {
+    flex-direction: column;
+  }
+  .main-content ul li {
     color: #4cd137;
+  }
+  .main-content ul.social-list {
+    flex-direction: row;
+  }
+  .main-content ul.social-list li a {
+    color: #487eb0;
+    transition: color 250ms ease-in-out 100ms;
+  }
+  .main-content ul.social-list li a:hover {
+    color: #fbc531;
   }
 
   a,
 a:visited {
     color: #fbc531;
-    display: block;
+    display: inline;
     font-family: "SourceCodePro", sans-serif, monospace;
     font-size: 1.2rem;
     margin: 0 auto;
-    padding: 0.5em 1em;
+    padding: 0.5em 0em;
     text-decoration: none;
     opacity: 1;
     transition: opacity 150ms ease-in-out;
@@ -285,7 +304,7 @@ a:visited {
   }
 
   .row a {
-    display: inline;
+    display: block;
     position: initial;
   }
 

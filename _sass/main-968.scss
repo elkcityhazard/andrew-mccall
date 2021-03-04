@@ -20,6 +20,7 @@ $nanohanacha-gold: rgba(225, 177, 44, 1);
     padding-left: 1em;
   }
 
+
   .main-content {
     margin: 0 auto;
     max-width: 60ch;
@@ -95,6 +96,10 @@ $nanohanacha-gold: rgba(225, 177, 44, 1);
 
   section > div > article {
     text-align: center;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .tag-list > ul > li > a {
@@ -180,27 +185,49 @@ $nanohanacha-gold: rgba(225, 177, 44, 1);
   }
 
   ul li {
-    display: inline-block;
     margin-bottom: 1em;
     margin-left: 1.5em;
     text-transform: none;
   }
-  .main-content > ul > li {
-    color: $download-progress;
+  .main-content {
+    .row {
+      flex-direction: column;
+    }
+    ul {
+      flex-direction: column;
+      li {
+        color: $download-progress;
+      }
+    }
+    ul.social-list {
+      flex-direction: row;
+      li {
+        a {
+          color: $seabrook;
+          transition: color 250ms ease-in-out 100ms;
+          &:hover {
+            color: $rise-and-shine;
+          }
+
+        }
+      }
+    }
   }
 
   a,
   a:visited {
     color: $rise-and-shine;
-    display: block;
+    display: inline;
     font-family: "SourceCodePro", sans-serif, monospace;
     font-size: 1.2rem;
     margin: 0 auto;
-    padding: 0.5em 1em;
+    padding: 0.5em 0em;
     text-decoration: none;
     opacity: 1;
     transition: opacity 150ms ease-in-out;
   }
+
+
 
   a:hover {
     color: $seabrook;
@@ -303,7 +330,7 @@ $nanohanacha-gold: rgba(225, 177, 44, 1);
   }
 
   .row a {
-    display: inline;
+    display: block;
     position: initial;
   }
 

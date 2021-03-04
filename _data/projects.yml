@@ -15,3 +15,9 @@
   description: Javascript Audio Player Using DOM manipulation, JSON, fetch API, async/await, and native HTML audio
   img: ../assets/images/projects/audio.jpg
   project-url: https://elkcityhazard.github.io/audio-player/
+
+- name: On Point Cutlery
+  link: /projects/on-point-cutlery.html
+  description: Static website built with HTML, CSS, Vanilla Javascript and compiled with Hugo Site Builder 
+  img: ../assets/images/projects/onpoint-screenshot.jpg
+  project-url: https://onpointcutlery.com

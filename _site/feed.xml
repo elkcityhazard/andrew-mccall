@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-12-19T17:45:04-05:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">How To Host A Website On BunnyCDN</title><link href="http://localhost:4000/2020/10/28/host-a-static-website-for-cheap-on-bunnycdn-copy.html" rel="alternate" type="text/html" title="How To Host A Website On BunnyCDN" /><published>2020-10-28T00:00:00-04:00</published><updated>2020-10-28T00:00:00-04:00</updated><id>http://localhost:4000/2020/10/28/host-a-static-website-for-cheap-on-bunnycdn%20copy</id><content type="html" xml:base="http://localhost:4000/2020/10/28/host-a-static-website-for-cheap-on-bunnycdn-copy.html">&lt;p&gt;We all want our web hosting to be as cheap as possible, especially when we are starting out.  Often, many aspiring developers turn to shared hosting solutions to program their first static sites.  This is convenient because in the beginning most developers struggle with basic tasks like connecting through ftp and uploading their site.  As we progress, however, we begin to realize the limitations of shared hosting such as resource sharing and slow responses during peak times.  This is when we start exploring other options available to us.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="https://andrew-mccall.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://andrew-mccall.com/" rel="alternate" type="text/html" /><updated>2021-03-03T19:54:33-05:00</updated><id>https://andrew-mccall.com/feed.xml</id><entry><title type="html">Time To Shine - CSS Hover Shine Effect</title><link href="https://andrew-mccall.com/2021/01/14/time-to-shine.html" rel="alternate" type="text/html" title="Time To Shine - CSS Hover Shine Effect" /><published>2021-01-14T00:00:00-05:00</published><updated>2021-01-14T00:00:00-05:00</updated><id>https://andrew-mccall.com/2021/01/14/time-to-shine</id><content type="html" xml:base="https://andrew-mccall.com/2021/01/14/time-to-shine.html">&lt;h2 id=&quot;time-to-shine-or-css-hover-shine-effect&quot;&gt;Time To Shine: Or CSS Hover Shine Effect&lt;/h2&gt;
+
+&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/cta.jpg&quot; alt=&quot;Call To Action In HTML&quot; title=&quot;CTA&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We usually only have a few short seconds to grab our users attention.  Most of the time, they will leave without any further action and increase your bounce rate along with it.  This is problematic because we want our web guests to find some intrinsic value to our site and use our product.&lt;/p&gt;
+
+&lt;h2 id=&quot;call-to-action&quot;&gt;Call To Action&lt;/h2&gt;
+
+&lt;p&gt;All successful landing pages will have some type of call to action. Remember, we want to use a call to action whenever we want our users to do anything.  For example, if we want our users to join us or if we want our users to try us for free.   There are many different components to a successful, high-converting call to action.  A good call to action can land a conversion while a poor one can cause a bounce.&lt;/p&gt;
+
+&lt;h2 id=&quot;cta-button-in-html&quot;&gt;CTA Button In HTML&lt;/h2&gt;
+
+&lt;p&gt;Call to actions are always a button.  Do not use a small hyperlink.  Do not use your favorite meme.  Do not use pictures of cats.  Use a button.  scores of research in regards to the importance of this.  The moment your user lands on a call to action button in HTML it is the essential moment for your page.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-should-a-call-to-action-button-have&quot;&gt;What should a call to action button have:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a defined border&lt;/li&gt;
+  &lt;li&gt;stand out from other elements on the page&lt;/li&gt;
+  &lt;li&gt;include text within the button&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We use these familiar styles because as humans we crave the familiar.  Ourminds already know what a call to action button is going to look like in theHTML document.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-css-shine-effect-to-cta-button-in-html&quot;&gt;Adding CSS Shine Effect TO CTA Button In HTML&lt;/h2&gt;
+
+&lt;p&gt;How do our potential customers know they have hit the CTA button?  If the call to action has good copy then they will know they have arrived.  We can help out the marketing team with some visual queues, too.&lt;/p&gt;
+
+&lt;script async=&quot;&quot; src=&quot;//jsfiddle.net/elkcityhazard/hua7w51s/118/embed/&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;how-css-shine-effect-works&quot;&gt;How CSS Shine Effect works&lt;/h2&gt;
+
+&lt;p&gt;I have provided the fiddle for my button above.  If you want to, you can simply adapt my code to your site.  I will still explain how it works.&lt;/p&gt;
+
+&lt;p&gt;This CSS trick relies on a few different things to make it happen.  The button must have &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;overflow:hidden&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;position:relative&lt;/code&gt; and I am using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;transition: all 250ms ease-in-out&lt;/code&gt; to gracefully transition the button on hover.&lt;/p&gt;
+
+&lt;p&gt;The “shine” effect is done using the css psuedo-elements &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.button::before&lt;/code&gt; &amp;amp; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.button::after&lt;/code&gt; and applying &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;transform:translateX()&lt;/code&gt; to them.  Also, we use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;filter: blur();&lt;/code&gt; to soften the edges of the shine shapes to simulate light reflecting off of the button.&lt;/p&gt;
+
+&lt;p&gt;The css might look a little something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;amp;::before {
+  background: rgba(255,255,255,1.0);
+  content: '';
+  display: block;
+  filter: blur(20px);
+  height: 50px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-300px) skew(-15deg);
+  transition: transform 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out;
+  width: 100px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Again you can refer to the fiddle to see what is going on under the hood.  The basics of it are 3 components.  You want to create two seperate elements that you can hide outside of the button.  I used &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;::before&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;::after&lt;/code&gt; because I wanted to create two slightly different shapes to give added depth to the shine.  I gave them different widths and heights so they would not overlap each other when they are transitioning.&lt;/p&gt;
+
+&lt;p&gt;I hide the shine elements outside of the button by setting them with a default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;transform: translateX(-300%);&lt;/code&gt;  This way they are not overlapping.  I also gave them an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;opacity:0;&lt;/code&gt; to make sure we were not going to be seeing them too early.&lt;/p&gt;
+
+&lt;h2 id=&quot;trigger-css-shine-button-effect&quot;&gt;Trigger CSS Shine Button effect&lt;/h2&gt;
+
+&lt;p&gt;Triggering the animation is easy enough.  We already have it tucked away off to the left hand side of the button. To trigger the transition we create the following css rule:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.button:hover::before,
+.button:hover::after {
+  transform: translateX(300%), skew(15%);
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now when you hover over the button you will see a beautiful shine effect which will really help draw attention to the fact that the button has been pressed!&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thoughts-on-css-button-shine-effect&quot;&gt;Final Thoughts On CSS Button Shine Effect&lt;/h2&gt;
+
+&lt;p&gt;There you have it.  Now you know a new way to help draw attention to your call to action.  If you have any questions feel free to contact me on the site or on social media and I will help you the best I can!  Send me your improvements to your code so I can see how you’re doing it better than I can!&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;With Love, 
+Andrew
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>andrew</name></author><category term="html" /><category term="css" /><category term="call to action" /><summary type="html">Time To Shine: Or CSS Hover Shine Effect</summary></entry><entry><title type="html">Time To Shine: How To Make A CSS Shine On Hover Effect</title><link href="https://andrew-mccall.com/2021/01/14/time-to-shine.html" rel="alternate" type="text/html" title="Time To Shine: How To Make A CSS Shine On Hover Effect" /><published>2021-01-14T00:00:00-05:00</published><updated>2021-01-14T00:00:00-05:00</updated><id>https://andrew-mccall.com/2021/01/14/time-to-shine</id><content type="html" xml:base="https://andrew-mccall.com/2021/01/14/time-to-shine.html">&lt;script async=&quot;&quot; src=&quot;//jsfiddle.net/elkcityhazard/hua7w51s/118/embed/html,css,result/dark/&quot;&gt;&lt;/script&gt;</content><author><name>andrew</name></author><category term="web development" /><category term="css" /><category term="css only" /><category term="frontend" /></entry><entry><title type="html">How To Host A Website On BunnyCDN</title><link href="https://andrew-mccall.com/2020/10/28/host-a-static-website-for-cheap-on-bunnycdn-copy.html" rel="alternate" type="text/html" title="How To Host A Website On BunnyCDN" /><published>2020-10-28T00:00:00-04:00</published><updated>2020-10-28T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/10/28/host-a-static-website-for-cheap-on-bunnycdn%20copy</id><content type="html" xml:base="https://andrew-mccall.com/2020/10/28/host-a-static-website-for-cheap-on-bunnycdn-copy.html">&lt;p&gt;We all want our web hosting to be as cheap as possible, especially when we are starting out.  Often, many aspiring developers turn to shared hosting solutions to program their first static sites.  This is convenient because in the beginning most developers struggle with basic tasks like connecting through ftp and uploading their site.  As we progress, however, we begin to realize the limitations of shared hosting such as resource sharing and slow responses during peak times.  This is when we start exploring other options available to us.&lt;/p&gt;
 
 &lt;h1 id=&quot;bunnycdn-hosting&quot;&gt;BunnyCDN Hosting&lt;/h1&gt;
 
@@ -60,7 +140,7 @@
 
 &lt;h4 id=&quot;final-thoughts-on-bunnycdn-hosting&quot;&gt;Final Thoughts On BunnyCDN Hosting&lt;/h4&gt;
 
-&lt;p&gt;I was able to get this up and running with pointing an a record to the public ip address.  It is my understanding that the ideal is to use a cname which only works at Top level domains with cname flattening.  I’m not sure what is going to happen if I leave it like this but it is a consideration since it isn’t 100% correct.&lt;/p&gt;</content><author><name>andrew</name></author><category term="static sites" /><category term="wordpress" /><category term="cdn" /><summary type="html">We all want our web hosting to be as cheap as possible, especially when we are starting out. Often, many aspiring developers turn to shared hosting solutions to program their first static sites. This is convenient because in the beginning most developers struggle with basic tasks like connecting through ftp and uploading their site. As we progress, however, we begin to realize the limitations of shared hosting such as resource sharing and slow responses during peak times. This is when we start exploring other options available to us.</summary></entry><entry><title type="html">Simple Parallax Scrolling</title><link href="http://localhost:4000/2020/10/06/easy-parallax-scrolling.html" rel="alternate" type="text/html" title="Simple Parallax Scrolling" /><published>2020-10-06T00:00:00-04:00</published><updated>2020-10-06T00:00:00-04:00</updated><id>http://localhost:4000/2020/10/06/easy-parallax-scrolling</id><content type="html" xml:base="http://localhost:4000/2020/10/06/easy-parallax-scrolling.html">&lt;h1 id=&quot;simple-parallax-scrolling-with-javascipt&quot;&gt;Simple Parallax Scrolling With Javascipt&lt;/h1&gt;
+&lt;p&gt;I was able to get this up and running with pointing an a record to the public ip address.  It is my understanding that the ideal is to use a cname which only works at Top level domains with cname flattening.  I’m not sure what is going to happen if I leave it like this but it is a consideration since it isn’t 100% correct.&lt;/p&gt;</content><author><name>andrew</name></author><category term="static sites" /><category term="wordpress" /><category term="cdn" /><summary type="html">We all want our web hosting to be as cheap as possible, especially when we are starting out. Often, many aspiring developers turn to shared hosting solutions to program their first static sites. This is convenient because in the beginning most developers struggle with basic tasks like connecting through ftp and uploading their site. As we progress, however, we begin to realize the limitations of shared hosting such as resource sharing and slow responses during peak times. This is when we start exploring other options available to us.</summary></entry><entry><title type="html">Simple Parallax Scrolling</title><link href="https://andrew-mccall.com/2020/10/06/easy-parallax-scrolling.html" rel="alternate" type="text/html" title="Simple Parallax Scrolling" /><published>2020-10-06T00:00:00-04:00</published><updated>2020-10-06T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/10/06/easy-parallax-scrolling</id><content type="html" xml:base="https://andrew-mccall.com/2020/10/06/easy-parallax-scrolling.html">&lt;h1 id=&quot;simple-parallax-scrolling-with-javascipt&quot;&gt;Simple Parallax Scrolling With Javascipt&lt;/h1&gt;
 
 &lt;p&gt;Parallax scrolling is ubiquitous in today’s web design approaches. There are, however, those who dissent. It has a simple, pre-attentive trait that aims to capture attention quickly but often misses its purported mark. Human’s have learned to quickly filter out “banner noise” and only recognize information that is relevant to their query.&lt;/p&gt;
 
@@ -97,7 +177,7 @@ let x = paraId.getBoundingClientRect().top / modifier; let y = Math.round(x * 10
 
 &lt;h2 id=&quot;the-state-of-parallax-scrolling&quot;&gt;The State Of Parallax Scrolling&lt;/h2&gt;
 
-&lt;p&gt;I really do not recommend doing this. It hurts your performance and never achieves the desired user experience that you would hope for. Nevertheless, this is a good tool to have for those few use cases that it might benefit from.&lt;/p&gt;</content><author><name>andrew</name></author><category term="parallax scrolling" /><category term="web development" /><category term="javascript" /><category term="learn to code" /><summary type="html">Parallax scrolling is ubiquitous in today's web design approaches. There are, however, those who dissent. Some assert that it is a poor approach that actually distracts the user.</summary></entry><entry><title type="html">Give Back Useful Information For CRUD PATCH Updates</title><link href="http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud.html" rel="alternate" type="text/html" title="Give Back Useful Information For CRUD PATCH Updates" /><published>2020-09-02T00:00:00-04:00</published><updated>2020-09-02T00:00:00-04:00</updated><id>http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud</id><content type="html" xml:base="http://localhost:4000/2020/09/02/a-fun-validation-trick-for-updating-crud.html">&lt;h2 id=&quot;return-useful-information-to-your-users-regarding-crud-operations&quot;&gt;Return useful information to your users regarding crud operations&lt;/h2&gt;
+&lt;p&gt;I really do not recommend doing this. It hurts your performance and never achieves the desired user experience that you would hope for. Nevertheless, this is a good tool to have for those few use cases that it might benefit from.&lt;/p&gt;</content><author><name>andrew</name></author><category term="parallax scrolling" /><category term="web development" /><category term="javascript" /><category term="learn to code" /><summary type="html">Parallax scrolling is ubiquitous in today's web design approaches. There are, however, those who dissent. Some assert that it is a poor approach that actually distracts the user.</summary></entry><entry><title type="html">Give Back Useful Information For CRUD PATCH Updates</title><link href="https://andrew-mccall.com/2020/09/02/a-fun-validation-trick-for-updating-crud.html" rel="alternate" type="text/html" title="Give Back Useful Information For CRUD PATCH Updates" /><published>2020-09-02T00:00:00-04:00</published><updated>2020-09-02T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/09/02/a-fun-validation-trick-for-updating-crud</id><content type="html" xml:base="https://andrew-mccall.com/2020/09/02/a-fun-validation-trick-for-updating-crud.html">&lt;h2 id=&quot;return-useful-information-to-your-users-regarding-crud-operations&quot;&gt;Return useful information to your users regarding crud operations&lt;/h2&gt;
 
 &lt;pre&gt;exports.updateSingleTask = async (req, res, next) =&amp;gt; {
 const updates = Object.keys(req.body);
@@ -153,7 +233,7 @@ return allowedUpdates.includes(update);
   &lt;li&gt;check to see if the data sent to the server is a valid operation.using the every method check to see if each value in the updatevariable is in the allowedUpdates list. If all of them are indeeincluded then isValidation will return true and the operation wilcontinue as normal. If isValidOperator returns false then return 400 error with some useful information for the user.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;This is a fun little example to help provide more useful feedback the user.&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><category term="learn to code" /><summary type="html">A user somehow defines an object property that does not exist in your database.</summary></entry><entry><title type="html">The Surprising Way To Avoid Failure Learning To Code As An Adult</title><link href="http://localhost:4000/2020/07/11/the-struggle-to-learn-programming-is-real.html" rel="alternate" type="text/html" title="The Surprising Way To Avoid Failure Learning To Code As An Adult" /><published>2020-07-11T00:00:00-04:00</published><updated>2020-07-11T00:00:00-04:00</updated><id>http://localhost:4000/2020/07/11/the-struggle-to-learn-programming-is-real</id><content type="html" xml:base="http://localhost:4000/2020/07/11/the-struggle-to-learn-programming-is-real.html">&lt;p&gt;&lt;img class=&quot;img-responsive&quot; data-src=&quot;/assets/images/posts/learning.jpg&quot; alt=&quot;an adult learning&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;This is a fun little example to help provide more useful feedback the user.&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><category term="learn to code" /><summary type="html">A user somehow defines an object property that does not exist in your database.</summary></entry><entry><title type="html">The Surprising Way To Avoid Failure Learning To Code As An Adult</title><link href="https://andrew-mccall.com/2020/07/11/the-struggle-to-learn-programming-is-real.html" rel="alternate" type="text/html" title="The Surprising Way To Avoid Failure Learning To Code As An Adult" /><published>2020-07-11T00:00:00-04:00</published><updated>2020-07-11T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/07/11/the-struggle-to-learn-programming-is-real</id><content type="html" xml:base="https://andrew-mccall.com/2020/07/11/the-struggle-to-learn-programming-is-real.html">&lt;p&gt;&lt;img class=&quot;img-responsive&quot; data-src=&quot;/assets/images/posts/learning.jpg&quot; alt=&quot;an adult learning&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;a-personal-story-for-those-on-the-journey&quot;&gt;A Personal Story For Those On The Journey&lt;/h1&gt;
 
@@ -193,7 +273,7 @@ There are a few things that have seemed to help me a little bit.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Learning to code is hard. I feel stuck or frustrated on a daily/weekly basis and find myself searching for the simplest things on stackoverflow. These are just a few of the things that have helped me along the way and I would love to hear from you if you have some other great ideas that would help.&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><category term="learn to code" /><summary type="html">Learning is hard. Really hard. Especially when you already have a busy job, career, family, or bowling league (I kid) that requires your daily attention.</summary></entry><entry><title type="html">How To Initialize A Javascript XMLHttpRequest</title><link href="http://localhost:4000/2020/06/29/How-To-Create-An-Easy-XMLHttpRequest.html" rel="alternate" type="text/html" title="How To Initialize A Javascript XMLHttpRequest" /><published>2020-06-29T00:00:00-04:00</published><updated>2020-06-29T00:00:00-04:00</updated><id>http://localhost:4000/2020/06/29/How-To-Create-An-Easy-XMLHttpRequest</id><content type="html" xml:base="http://localhost:4000/2020/06/29/How-To-Create-An-Easy-XMLHttpRequest.html">&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/xmlhttprequest.jpg&quot; alt=&quot;a human making an xmlhttprequest&quot; title=&quot;neon switchboard&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Learning to code is hard. I feel stuck or frustrated on a daily/weekly basis and find myself searching for the simplest things on stackoverflow. These are just a few of the things that have helped me along the way and I would love to hear from you if you have some other great ideas that would help.&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><category term="learn to code" /><summary type="html">Learning is hard. Really hard. Especially when you already have a busy job, career, family, or bowling league (I kid) that requires your daily attention.</summary></entry><entry><title type="html">How To Initialize A Javascript XMLHttpRequest</title><link href="https://andrew-mccall.com/2020/06/29/How-To-Create-An-Easy-XMLHttpRequest.html" rel="alternate" type="text/html" title="How To Initialize A Javascript XMLHttpRequest" /><published>2020-06-29T00:00:00-04:00</published><updated>2020-06-29T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/06/29/How-To-Create-An-Easy-XMLHttpRequest</id><content type="html" xml:base="https://andrew-mccall.com/2020/06/29/How-To-Create-An-Easy-XMLHttpRequest.html">&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/xmlhttprequest.jpg&quot; alt=&quot;a human making an xmlhttprequest&quot; title=&quot;neon switchboard&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;One of the first things to learn when learning asynchronous javascript is how to make an XMLHttpRequest. In this short article I am going to show you briefly how to achieve this so you can add some very powerful and dynamic features to your website. Perhaps you want to make a NASA image slideshow? A popular Chuck Norris Joke Generator? All of these things can be achieved using XHR to call an API and retrieve information.&lt;/p&gt;
 
@@ -246,7 +326,7 @@ function loadData() {
 
 &lt;p&gt;Again, these are just simple notes to help you get up and running with the most basic XMLHttpRequest. This is not meant to be exhaustive source but just informational. It helps me to see things broke down to the most basic form possible and then built up from there. I hope this can help someone who is learning XMLHttpRequests like I am!&lt;/p&gt;
 
-&lt;p&gt;Please &lt;a class=&quot;visible inline-link&quot; href=&quot;/contact&quot; title=&quot;contact me&quot;&gt;contact me&lt;/a&gt; if you have any questions or comments and I’ll be more than happy to get back to you!&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><category term="learn to code" /><summary type="html">One of the first things to learn when learning asynchronous javascript is how to make an XMLHttpRequest. In this short article I am going to show how to achieve this so you can add some very powerful and dynamic features to your website. Perhaps you want to make a NASA image slideshow? A popular Chuck Norris Joke Generator? All of these things can be achieved using XHR to call an API and retrieve information.</summary></entry><entry><title type="html">How To Calculate Time For Javascript Functions</title><link href="http://localhost:4000/2020/06/25/calculate-time-for-javascript.html" rel="alternate" type="text/html" title="How To Calculate Time For Javascript Functions" /><published>2020-06-25T00:00:00-04:00</published><updated>2020-06-25T00:00:00-04:00</updated><id>http://localhost:4000/2020/06/25/calculate-time-for-javascript</id><content type="html" xml:base="http://localhost:4000/2020/06/25/calculate-time-for-javascript.html">&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/clock.jpg&quot; alt=&quot;a clock being held in the air&quot; title=&quot;clock&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Please &lt;a class=&quot;visible inline-link&quot; href=&quot;/contact&quot; title=&quot;contact me&quot;&gt;contact me&lt;/a&gt; if you have any questions or comments and I’ll be more than happy to get back to you!&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><category term="learn to code" /><summary type="html">One of the first things to learn when learning asynchronous javascript is how to make an XMLHttpRequest. In this short article I am going to show how to achieve this so you can add some very powerful and dynamic features to your website. Perhaps you want to make a NASA image slideshow? A popular Chuck Norris Joke Generator? All of these things can be achieved using XHR to call an API and retrieve information.</summary></entry><entry><title type="html">How To Calculate Time For Javascript Functions</title><link href="https://andrew-mccall.com/2020/06/25/calculate-time-for-javascript.html" rel="alternate" type="text/html" title="How To Calculate Time For Javascript Functions" /><published>2020-06-25T00:00:00-04:00</published><updated>2020-06-25T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/06/25/calculate-time-for-javascript</id><content type="html" xml:base="https://andrew-mccall.com/2020/06/25/calculate-time-for-javascript.html">&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/clock.jpg&quot; alt=&quot;a clock being held in the air&quot; title=&quot;clock&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As I’ve been learning more javascript I found dates and time to be a bit confusing. I will try and break down some of the parts to make it easier for someone else to learn as well.&lt;/p&gt;
 
@@ -303,7 +383,7 @@ setInterval(updateTime, 1000);
 
 &lt;p&gt;This will start executing updateTime function every 1000 ms.&lt;/p&gt;
 
-&lt;p&gt;I hope this helps someone when they go to work with converting days, minutes, hours, etc. If you have any questions or want to see some code feel free to reach out to me &lt;a class=&quot;visible inline-link&quot; href=&quot;/contact.html&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">In order to work with dates in javascript, you have to first create a new instance of the date object. Then you can specify the time and date you want it to represent.</summary></entry><entry><title type="html">Recursive Functions</title><link href="http://localhost:4000/2020/06/19/recursive-functions.html" rel="alternate" type="text/html" title="Recursive Functions" /><published>2020-06-19T00:00:00-04:00</published><updated>2020-06-19T00:00:00-04:00</updated><id>http://localhost:4000/2020/06/19/recursive-functions</id><content type="html" xml:base="http://localhost:4000/2020/06/19/recursive-functions.html">&lt;p&gt;Recursive functions are at first difficult to wrap your head around. Essentially, a recursive function is one that calls itself as part of the function. For a recursive function to not overload the call stack there needs to be a condition set to cause the function to stop calling on itself.&lt;/p&gt;
+&lt;p&gt;I hope this helps someone when they go to work with converting days, minutes, hours, etc. If you have any questions or want to see some code feel free to reach out to me &lt;a class=&quot;visible inline-link&quot; href=&quot;/contact.html&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">In order to work with dates in javascript, you have to first create a new instance of the date object. Then you can specify the time and date you want it to represent.</summary></entry><entry><title type="html">Recursive Functions</title><link href="https://andrew-mccall.com/2020/06/19/recursive-functions.html" rel="alternate" type="text/html" title="Recursive Functions" /><published>2020-06-19T00:00:00-04:00</published><updated>2020-06-19T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/06/19/recursive-functions</id><content type="html" xml:base="https://andrew-mccall.com/2020/06/19/recursive-functions.html">&lt;p&gt;Recursive functions are at first difficult to wrap your head around. Essentially, a recursive function is one that calls itself as part of the function. For a recursive function to not overload the call stack there needs to be a condition set to cause the function to stop calling on itself.&lt;/p&gt;
 
 &lt;p&gt;For Example in javascript:&lt;/p&gt;
 
@@ -327,7 +407,7 @@ console.log(recursion(20));
 
 &lt;p&gt;Ultimately, recursion usually takes up greater resource allocation to complete and iteration (looping) usually takes up less. Ultimately, I prefer to use iteration when processing simple sequential data structures and anywhere a simple loop will do the trick. If I need to process a recursive data structure, however, I will use recursion - especially if the result is cleaner and simple for the next person to read.&lt;/p&gt;
 
-&lt;p&gt;These are just simple notes as I learn about javascript. If you have any questions, want a better explanation, or just want to chat code on your coding feel free to reach out to me&lt;a href=&quot;/contact.html&quot; class=&quot;visible inline-link&quot; title=&quot;contact me&quot;&gt;here&lt;/a&gt;&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">It is acceptable for a function to call itself as long as it does not over flow the call stack. A function that calls itself is called a recursive function.</summary></entry><entry><title type="html">Quickly Connect To MongoDB In NodeJS</title><link href="http://localhost:4000/2020/06/14/quickly-connect-to-mongodb.html" rel="alternate" type="text/html" title="Quickly Connect To MongoDB In NodeJS" /><published>2020-06-14T00:00:00-04:00</published><updated>2020-06-14T00:00:00-04:00</updated><id>http://localhost:4000/2020/06/14/quickly-connect-to-mongodb</id><content type="html" xml:base="http://localhost:4000/2020/06/14/quickly-connect-to-mongodb.html">&lt;p&gt;I will get quickly to the point.&lt;/p&gt;
+&lt;p&gt;These are just simple notes as I learn about javascript. If you have any questions, want a better explanation, or just want to chat code on your coding feel free to reach out to me&lt;a href=&quot;/contact.html&quot; class=&quot;visible inline-link&quot; title=&quot;contact me&quot;&gt;here&lt;/a&gt;&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">It is acceptable for a function to call itself as long as it does not over flow the call stack. A function that calls itself is called a recursive function.</summary></entry><entry><title type="html">Quickly Connect To MongoDB In NodeJS</title><link href="https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb.html" rel="alternate" type="text/html" title="Quickly Connect To MongoDB In NodeJS" /><published>2020-06-14T00:00:00-04:00</published><updated>2020-06-14T00:00:00-04:00</updated><id>https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb</id><content type="html" xml:base="https://andrew-mccall.com/2020/06/14/quickly-connect-to-mongodb.html">&lt;p&gt;I will get quickly to the point.&lt;/p&gt;
 
 &lt;pre&gt;
 const express = require(&quot;express&quot;);
@@ -375,145 +455,4 @@ connectionstring (from mongodb), an object, and then a function&lt;/li&gt;
   &lt;li&gt;make sure to establish database connection before listening on the port&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;These are quick and dirty notes for communicating with the database server.&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">Use mongodb to set up your first database. This is a quick and easy way to get mongodb set up with nodejs.</summary></entry><entry><title type="html">Console.Log A Chessboard</title><link href="http://localhost:4000/2020/06/11/console-log-a-chess-board.html" rel="alternate" type="text/html" title="Console.Log A Chessboard" /><published>2020-06-11T00:00:00-04:00</published><updated>2020-06-11T00:00:00-04:00</updated><id>http://localhost:4000/2020/06/11/console-log-a-chess-board</id><content type="html" xml:base="http://localhost:4000/2020/06/11/console-log-a-chess-board.html">&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/chessboard.jpg&quot; alt=&quot;Chessboard&quot; title=&quot;how to make a text-based chessboard&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;
-        Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a &quot;#&quot; character. The characters should form a chessboard.
-
-Passing this string to console.log should show something like this:
-
- # # # #
-# # # # 
- # # # #
-# # # # 
- # # # #
-# # # # 
- # # # #
-# # # #
-
-When you have a program that generates this pattern, define a binding size = 8 and change the program so that it works for any size, outputting a grid of the given width and height.
-&lt;/pre&gt;
-
-&lt;p&gt;Things To Learn Here&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Variables&lt;/li&gt;
-&lt;li&gt;For Loop&lt;/li&gt;
-&lt;li&gt;% Modulus (division remainder)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The first thing we want to do is define a couple of variables:&lt;/p&gt;
-
-&lt;pre&gt;
-let size = 8;
-let board = ' ';
-&lt;/pre&gt;
-
-&lt;p&gt;This defines the height and the width that the board will be. we set board to an empty string to act as the first space of the board.&lt;/p&gt;
-
-&lt;p&gt;To accomplish this we need to go ahead and use a nested for loop.&lt;/p&gt;
-
-&lt;pre&gt;
-for (let i = 0; i &amp;lt; size; i++) {
-    for (let j = 0; j &amp;lt; size; j++) {
-        if((i+j) % 2 === 0 ) {
-            board += ' ';
-        } else {
-            board += '#';
-        }
-    }
-    board += '\n';
-}
-&lt;/pre&gt;
-
-&lt;p&gt;basically we are checking each space with its corresponding space to see if it is even or odd. If it is even we are outputting a blank space. If it is odd we are outputting an octothorpe. We use the modulus operator to determine this.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;board += '\n';&lt;/code&gt; tells us to make a line break at the end of the line.&lt;/p&gt;
-
-&lt;p&gt;The basics of a for loop are setting a starting index, which is usually 0, setting a limit which is usually a number or array length, and then incrementing the loop index until all indexes have been exhausted.&lt;/p&gt;
-
-&lt;p&gt;for example:&lt;/p&gt;
-
-&lt;pre&gt;
-let list = new Array(1,2,3,4,5);
-
-for (let i = 0; i &amp;lt; list.length; i++) {
-    console.log(i);
-}
-&lt;/pre&gt;
-
-&lt;p&gt;This will output the following to the console:&lt;/p&gt;
-
-&lt;pre&gt;
-0 
-1 
-2 
-3 
-4
-&lt;/pre&gt;
-
-&lt;p&gt;I think that pretty much wraps up my loose understanding of nested lists.&lt;/p&gt;
-
-&lt;p&gt;If you have any questions or find any errors feel free to reach out to me &lt;a href=&quot;/contact&quot; title=&quot;contact me&quot; aria-label=&quot;navigation&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;</content><author><name>andrew</name></author><category term="for loop" /><category term="web development" /><category term="javascript" /><category term="learn to code" /><summary type="html">A brief example of nested loops to make a text based chessboard.</summary></entry><entry><title type="html">Intersection Observer API</title><link href="http://localhost:4000/2020/06/10/intersection-observer.html" rel="alternate" type="text/html" title="Intersection Observer API" /><published>2020-06-10T00:00:00-04:00</published><updated>2020-06-10T00:00:00-04:00</updated><id>http://localhost:4000/2020/06/10/intersection-observer</id><content type="html" xml:base="http://localhost:4000/2020/06/10/intersection-observer.html">&lt;p&gt;&lt;img data-src=&quot;/assets/images/posts/intersection-observer.jpg&quot; alt=&quot;Intersection Being Observed&quot; title=&quot;Intersection Being Observed&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I wanted to be able to easily load an animation if an element came into view. Intersection observer seems to be the quickest way for me. If you want to use this for lazy loading you can give your images a data-src property instead of src then assign the data-src to the src when the element comes into view.&lt;/p&gt;
-
-&lt;p&gt;My basic template is:&lt;/p&gt;
-
-&lt;pre&gt;
-let images = document.querySelectorAll('.image-class');
-
-observer = new IntersectionObserver((entries) =&amp;gt; {
-  entries.forEach(entry =&amp;gt; {
-    if (entry.intersectionRatio &amp;gt; 0) {
-      let attr = image.target.getAttribute('data-src');
-      image.target.src = attr;
-      entry.target.classList.add(&quot;animate__animated&quot;);
-      entry.target.classList.add(&quot;animate__fadeIn&quot;);
-      observer.unobserve(entry.target);
-    } else {
-      //entry.target.classList.remove('animate__animated animate__bounce');
-      return;
-    }
-  });
-});
-
-images.forEach(image =&amp;gt; {
-  observer.observe(image);
-});
-&lt;/pre&gt;
-
-&lt;p&gt;This is the basic set up. If you have an image that you want to lazy load you can do something like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-&amp;lt;img data-src=&quot;url&quot; alt=&quot;image alt&quot; class=&quot;image-class&quot;&amp;gt;
-&lt;/code&gt;
-and in the javascript you can add:&lt;/p&gt;
-
-&lt;pre&gt;
-let attr = image.target.getAttribute('data-src');
-      image.target.src = attr;
-&lt;/pre&gt;
-
-&lt;p&gt;to the function body.&lt;/p&gt;
-
-&lt;p&gt;Intersection observer takes two arguments: the element to be observed and the options.&lt;/p&gt;
-
-&lt;pre&gt;
-let options = {
-  root: null
-  rootMargin: &quot;0px&quot;,
-  threshold: 1.0,
-};
-let observer = new intersectionObserver((images, options) =&amp;gt; {
-    //Do something with images
-});
-&lt;/pre&gt;
-
-&lt;p&gt;root: defines what the viewport area is. If null it will default to the viewport. But you can also use document.getELementById to pick a intersection cross section.&lt;/p&gt;
-
-&lt;p&gt;rootMargin: is similar to margin in that it adds margin to your intersection observer entry so that it will trigger with margin added to it.&lt;/p&gt;
-
-&lt;p&gt;threshold: is how much should be in the observation area before the request triggers. For example 1.0 means the entire element needs to be in the viewport. This can also be an array so that the callback runs every time visibility passes a threshhold. For example:&lt;/p&gt;
-
-&lt;pre&gt;[0, 0.25, 0.5, 0.75, 1.0]&lt;/pre&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">Use intersection observer to asynchronously observe a DOM element and trigger events based on if it is within the viewport.</summary></entry></feed>
+&lt;p&gt;These are quick and dirty notes for communicating with the database server.&lt;/p&gt;</content><author><name>andrew</name></author><category term="javascript" /><category term="web development" /><summary type="html">Use mongodb to set up your first database. This is a quick and easy way to get mongodb set up with nodejs.</summary></entry></feed>

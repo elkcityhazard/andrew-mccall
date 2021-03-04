@@ -1,0 +1,82 @@
+I"H<h2 id="time-to-shine-or-css-hover-shine-effect">Time To Shine: Or CSS Hover Shine Effect</h2>
+
+<p><img data-src="/assets/images/posts/cta.jpg" alt="Call To Action In HTML" title="CTA" class="img-responsive" /></p>
+
+<p>We usually only have a few short seconds to grab our users attention.  Most of the time, they will leave without any further action and increase your bounce rate along with it.  This is problematic because we want our web guests to find some intrinsic value to our site and use our product.</p>
+
+<h2 id="call-to-action">Call To Action</h2>
+
+<p>All successful landing pages will have some type of call to action. Remember, we want to use a call to action whenever we want our users to do anything.  For example, if we want our users to join us or if we want our users to try us for free.   There are many different components to a successful, high-converting call to action.  A good call to action can land a conversion while a poor one can cause a bounce.</p>
+
+<h2 id="cta-button-in-html">CTA Button In HTML</h2>
+
+<p>Call to actions are always a button.  Do not use a small hyperlink.  Do not use your favorite meme.  Do not use pictures of cats.  Use a button.  scores of research in regards to the importance of this.  The moment your user lands on a call to action button in HTML it is the essential moment for your page.</p>
+
+<h2 id="what-should-a-call-to-action-button-have">What should a call to action button have:</h2>
+
+<ul>
+  <li>a defined border</li>
+  <li>stand out from other elements on the page</li>
+  <li>include text within the button</li>
+</ul>
+
+<p>We use these familiar styles because as humans we crave the familiar.  Ourminds already know what a call to action button is going to look like in theHTML document.</p>
+
+<h2 id="adding-css-shine-effect-to-cta-button-in-html">Adding CSS Shine Effect TO CTA Button In HTML</h2>
+
+<p>How do our potential customers know they have hit the CTA button?  If the call to action has good copy then they will know they have arrived.  We can help out the marketing team with some visual queues, too.</p>
+
+<script async="" src="//jsfiddle.net/elkcityhazard/hua7w51s/118/embed/"></script>
+
+<h2 id="how-css-shine-effect-works">How CSS Shine Effect works</h2>
+
+<p>I have provided the fiddle for my button above.  If you want to, you can simply adapt my code to your site.  I will still explain how it works.</p>
+
+<p>This CSS trick relies on a few different things to make it happen.  The button must have <code class="language-plaintext highlighter-rouge">overflow:hidden</code>, <code class="language-plaintext highlighter-rouge">position:relative</code> and I am using <code class="language-plaintext highlighter-rouge">transition: all 250ms ease-in-out</code> to gracefully transition the button on hover.</p>
+
+<p>The “shine” effect is done using the css psuedo-elements <code class="language-plaintext highlighter-rouge">.button::before</code> &amp; <code class="language-plaintext highlighter-rouge">.button::after</code> and applying <code class="language-plaintext highlighter-rouge">transform:translateX()</code> to them.  Also, we use the <code class="language-plaintext highlighter-rouge">filter: blur();</code> to soften the edges of the shine shapes to simulate light reflecting off of the button.</p>
+
+<p>The css might look a little something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp;::before {
+  background: rgba(255,255,255,1.0);
+  content: '';
+  display: block;
+  filter: blur(20px);
+  height: 50px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-300px) skew(-15deg);
+  transition: transform 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out;
+  width: 100px;
+}
+</code></pre></div></div>
+
+<p>Again you can refer to the fiddle to see what is going on under the hood.  The basics of it are 3 components.  You want to create two seperate elements that you can hide outside of the button.  I used <code class="language-plaintext highlighter-rouge">::before</code> and <code class="language-plaintext highlighter-rouge">::after</code> because I wanted to create two slightly different shapes to give added depth to the shine.  I gave them different widths and heights so they would not overlap each other when they are transitioning.</p>
+
+<p>I hide the shine elements outside of the button by setting them with a default <code class="language-plaintext highlighter-rouge">transform: translateX(-300%);</code>  This way they are not overlapping.  I also gave them an <code class="language-plaintext highlighter-rouge">opacity:0;</code> to make sure we were not going to be seeing them too early.</p>
+
+<h2 id="trigger-css-shine-button-effect">Trigger CSS Shine Button effect</h2>
+
+<p>Triggering the animation is easy enough.  We already have it tucked away off to the left hand side of the button. To trigger the transition we create the following css rule:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.button:hover::before,
+.button:hover::after {
+  transform: translateX(300%), skew(15%);
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}
+</code></pre></div></div>
+
+<p>Now when you hover over the button you will see a beautiful shine effect which will really help draw attention to the fact that the button has been pressed!</p>
+
+<h2 id="final-thoughts-on-css-button-shine-effect">Final Thoughts On CSS Button Shine Effect</h2>
+
+<p>There you have it.  Now you know a new way to help draw attention to your call to action.  If you have any questions feel free to contact me on the site or on social media and I will help you the best I can!  Send me your improvements to your code so I can see how you’re doing it better than I can!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>With Love, 
+Andrew
+</code></pre></div></div>
+:ET
